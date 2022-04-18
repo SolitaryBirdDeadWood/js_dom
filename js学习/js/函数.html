@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    //函数创建调用
+    //1.
+     var fun = new Function("console.log('这是我的第一个函数');");
+     var fuy=function(){
+         console.log('我执行');
+         console.log('我是一个匿名函数');
+     }
+
+     function funny(){
+    console.log("这是我的第二个函数");
+    }
+
+    funny();
+    fuy();
+    fun();
+
+    //返回值
+    function we(num1,num2){
+        return num1+num2;
+    }
+    console.log(we(3,7));
+
+    //函数镶嵌 调用
+    function fu(){
+        console.log('父亲');
+        function zi(){
+            console.log('儿子');
+        }
+        function zii(){
+            console.log('zi而');
+        }
+        zi();
+        zii();
+    }
+    fu();
+
+
+   //实参与形参
+    var s1 =function(a=8,b=4){
+            console.log(a+b);
+        }
+        s1(1,2); 
+
+
+    //对象中的函数
+  var hero={
+      age:100,
+      name:'孙悟空',
+      action: function(){
+          console.log('我来也');
+      }
+  }
+  hero.action();
+
+  //对象函数
+
+
+var name = "全局变量name";
+function funny() {
+    console.log(this.name);
+//调用函数每次都会向函数内部传递进一个隐含的参数，这个隐含的参数就是this，this指向的是一个对象
+}
+funny();
+var obj = {
+    name: "孙悟空",
+    sayName: fun
+};
+obj.sayName();
+
+
+//使用函数 加上 循环创建100个美国大兵
+function createPeople(name,num){
+    var obj6=new Object();
+        this.name=name,
+        obj.生命=100,
+        obj.attack=num,
+        obj.action1=function(){
+            console.log('欢呼');
+        }
+        return obj6;
+    }
+var person1=createPeople('美国大兵','100');
+var person2=createPeople('尤里','190');
+console.log(person1);
+console.log(person2);
+
+//每一个对象的属性不一样，但是它的方法似乎好像是一样的，
+//如果我创建1000个对象，内存中就有1000个相同的方法
+//那要是有10000个，那对内存的浪费可不是一点半点的，
+//，我们可以把函数抽取出来，作为全局函数，在构造函数中直接引用就可以了
+/*但是，在全局作用域中定义函数却不是一个好的办法，为什么呢？
+因为，如果要是涉及到多人协作开发一个项目，别人也有可能叫sayName这个方法，
+这样在工程合并的时候就会导致一系列的问题，污染全局作用域  使用原型对象*/
+
+//1.原型对象
+// 使用构造函数来创建对象
+function Person(name, age) {
+    // 设置对象的属性
+    this.name = name;
+    this.age = age;
+}
+
+// 在Person类的原型对象中添加方法
+Person.prototype.sayName = function() {
+    console.log(this.name);
+};
+
+var person1 = new Person("孙悟空", 18);
+var person2 = new Person("猪八戒", 19);
+var person3 = new Person("沙和尚", 20);
+
+person1.sayName();
+person2.sayName();
+person3.sayName();
+
+
+
+
+
+
+//关于this
+/*
+  1.以函数调用为全局对象
+  2.以方法形式调用 girl.action()  为所调用的方法的对象
+   
+
+*/
+//1. 隐式绑定
+function fua(){
+    console.log('你好');
+    console.log(this);
+}
+var girl={
+    name:'A',
+    height:180,
+    weight:140,
+    detail:function(){
+        console.log('姓名:'+girl.name);
+        //将 girl.name 改为 this.name  this 指向这个对象
+        //以方法的形式调用时，this就是调用方法的那个对象
+    },
+    action:fua,
+     //girl.action=fua();
+     //girl.action() 的调用相当于 fua()
+     
+}
+girl.detail();
+girl.action() ; //为对象中object
+      fua(); //this为全局对象
+
+
+
+      
+
+
+    </script>
+</head>
+<body>
+</body>
+</html>

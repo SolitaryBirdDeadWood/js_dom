@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+img{
+    position: absolute;
+}
+</style>
+
+<body>
+    <img src="素材/开眼3.png" alt="">
+    <script>
+        var img =document.getElementsByTagName('img');
+        document.addEventListener('mousemove',function(e){
+            var x =e.pageX;
+            var y=e.pageY;
+            console.log('x坐标是：'+x,'y坐标是：'+y);
+            img[0].style.left=x+'px';
+            img[0].style.top=y+'px ';
+        })
+    </script>
+
+</body>
+</html>

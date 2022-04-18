@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+
+
+</head>
+<body>
+    <button class="a1">按键一</button>
+    <button class="a2">按键二</button>
+    <button class="a3">按键三</button>
+    <button class="a4">按键四</button>
+    <button class="a5">按键五</button>
+
+    <script>
+        var but =document.getElementsByTagName('button');
+        for(let i =0;i<but.length;i++){
+            console.log('第一层for');
+            but[i].onclick=function(){
+               
+                for(let u =0;u<but.length;u++){
+                    but[i].style.backgroundColor='';
+                    console.log('先去除颜色，第二层for');    
+                  //  console.log('u的值为：'+u);
+                   // console.log('i的值为：'+i);
+                //如果内层循环里面有参数 则循环多次,无参数则循环一次
+                } //内层循环完成
+
+                console.log('改变颜色');
+                this.style.backgroundColor='red';
+                var text= but[i].innerHTML;
+                console.log(text);
+            }
+        }
+
+
+        //第一层for 通过点击改变样式
+        // 第二层for 在改变样式之前 用循环对 所有 所要操作的元素进行重置；
+    </script>
+
+</body>
+</html>
+<script>
+    /*
+    排他思想：
+        通过两个for循环 对同一种操作效果进行来回切换
+            外层循环进行效果增加  内层循环进行效果删除
+                干掉其他人 留下自己
+                  清楚样式
+                  增加样式
+                 */
+</script>

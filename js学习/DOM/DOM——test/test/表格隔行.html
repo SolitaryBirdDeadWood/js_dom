@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .s1{
+            background-color: rgb(45, 159, 191);
+            
+        }
+        table{
+            color: brown;
+            text-align: center;
+            border-collapse: collapse;
+            width: 800px;
+        }
+    </style>
+</head>
+<body>
+    <table class="ta">
+        <thead>
+        <tr class="s1">
+           
+                <th>代码</th>
+                <th>名称</th>
+                <th>最新公布净值</th>
+                <th>累计净值</th>
+                <th>前单位净值</th>
+                <th>净值增长率</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>00123</td>
+            <td>农业金牌1号定期开放</td>
+            <td>1075.4</td>
+            <td>1074.5</td>
+            <td>1084.9</td>
+            <td>0.478%</td>
+        </tr>
+        <tr>
+            <td>00123</td>
+            <td>农业金牌1号定期开放</td>
+            <td>1075.4</td>
+            <td>1074.5</td>
+            <td>1084.9</td>
+            <td>0.478%</td>
+        </tr>
+        <tr>
+            <td>00123</td>
+            <td>农业金牌1号定期开放</td>
+            <td>1075.4</td>
+            <td>1074.5</td>
+            <td>1084.9</td>
+            <td>0.478%</td>
+        </tr>
+        <tr>
+            <td>00123</td>
+            <td>农业金牌1号定期开放</td>
+            <td>1075.4</td>
+            <td>1074.5</td>
+            <td>1084.9</td>
+            <td>0.478%</td>
+        </tr>
+        <tr>
+            <td>00123</td>
+            <td>农业金牌1号定期开放</td>
+            <td>1075.4</td>
+            <td>1074.5</td>
+            <td>1084.9</td>
+            <td>0.478%</td>
+        </tr>
+        <tr>
+        <td>00123</td>
+        <td>农业金牌1号定期开放</td>
+        <td>1075.4</td>
+        <td>1074.5</td>
+        <td>1084.9</td>
+        <td>0.478%</td>
+        </tr>
+    </tbody>
+        <script>
+            var text = document.querySelector('tbody').querySelectorAll('tr');
+            for(let i =0;i<text.length;i++){
+                 text[i].onmouseover =function(){
+                this.style.backgroundColor='green';
+             }
+                text[i].onmouseout =function(){
+                this.style.backgroundColor='';
+             }
+            }
+        </script>
+    </table>
+</body>
+</html>
+<script>
+ /*
+     border-collapse:collapse; 边框会合并为一个单一的边框。会忽略 border-spacing 和 empty-cells 属性。
+
+     border-collapse:separate; 默认值。边框会被分开。不会忽略 border-spacing 和 empty-cells 属性。
+
+     border-collapse:inherit;  规定应该从父元素继承 border-collapse 属性的值。
+ 
+ 
+ 
+ */
+</script>

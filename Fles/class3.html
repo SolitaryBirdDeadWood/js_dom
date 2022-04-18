@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body>div{
+        background-color: aqua;
+        width: 800px;
+        height: 400px;
+        margin: auto;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: 1;
+
+    }
+    div>div{
+        width: 130px;
+        height: 80px;
+        background-color: brown;
+        text-align: center;
+        
+    }
+</style>
+ 
+
+<body>
+    <div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+    
+</body>
+</html>
+
+##### flex-wrap
+
+> ##### 在规定好宽度的父元素和子元素 如果子元素的宽度和长度和间隔空间之和超出父元素盒子大小 则 ==会缩减盒子的大小==来适应父元素的长款
+
+###### 默认为 nowrap 不换行   缩减盒子来自适应
+
+###### wrap 换行

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     div{
+         width: 400px;
+         border-bottom: 1px solid rgb(79, 75, 75);
+         margin: 100px auto;
+         /* position: relative; */
+     }
+     div input{
+         border: 0;
+         outline:none;
+     }
+     label img{
+         width: 27px;
+         /* position: absolute; */
+     /* right: 0px; */
+     float:right;
+     /*
+     子绝父相 然后使用 right 和top改变位置
+     相对于 用浮动可以调整上下位置
+     但是 子绝父相后 各部分边距发生改变*/
+     }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <center><h1 class="d1">你好</h1></center>
+        <label for="">
+            <img src="../素材/闭眼-19.png" alt="">
+        </label>
+        <input type="password" id="password1">
+<script>
+    var img=document.getElementsByTagName('img');
+    var pwd=document.getElementById('password1')
+    var flag=1;
+    img[0].onclick=function(){
+    if(flag==1){
+        img[0].src='../素材/开眼3.png';
+        pwd.type='text';
+        flag=2; //修改值 对下次判断造成干扰 然后闭眼
+    }
+    else{
+        img[0].src='../素材/闭眼-19.png';
+        pwd.type='password';
+        flag=1;
+    }
+    var div1=document.getElementsByClassName('d1');
+    div1[0].onclick=function(){
+        div1[0].style.display='none';
+    }
+
+    }
+</script>
+    </div>
+</body>
+</html>
+<script>
+    /*
+    核心：
+     将密码框里面的的 密码格式 转为文本模式
+
+
+
+     display的隐藏会使得原位置空出来
+    */
+</script>

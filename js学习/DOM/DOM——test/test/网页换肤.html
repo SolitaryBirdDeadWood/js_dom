@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background: url(../素材/src=http___b-ssl.duitang.com_uploads_item_201901_25_20190125145449_kjLFj.jpeg&refer=http___b-ssl.duitang.jpg) no-repeat center top;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        .baidu {
+            overflow: hidden;
+            margin: 100px auto;
+            background-color: #fff;
+            width: 410px;
+            padding-top: 3px;
+        }
+        
+        .baidu li {
+            float: left;
+            margin: 0 1px;
+            cursor: pointer; /*光标为手*/
+        }
+        
+        .baidu img {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="baidu">
+        <li><img src="../素材/0158a15e4d245da8012165184e0709.jpg@1280w_1l_2o_100sh.jpg"></li>
+        <li><img src="../素材/4487ef73-97d5-4218-884d-042aed26df71.jpg"></li>
+        <li><img src="../素材/51dcd93c-a98e-4635-aa5d-74193c6f1f26.jpg"></li>
+        <li><img src="../素材/wallhaven-2ez2wg.jpg"></li>
+    </ul>
+    <script>
+        // 1. 获取元素 
+        var imgs = document.querySelector('.baidu').querySelectorAll('img');
+        // console.log(imgs);
+        // 2. 循环注册事件 
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].onclick = function() {
+                // this.src 就是我们点击图片的路径   得到   images/2.jpg
+                // console.log(this.src);
+                // 把这个路径 this.src 给body 就可以了
+                document.body.style.backgroundImage = 'url(' + this.src + ')'; /*  'url(${img[i].src})'    */
+            }
+        }
+    </script>
+</body>
+
+</html>

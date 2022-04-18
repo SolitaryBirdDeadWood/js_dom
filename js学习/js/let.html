@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+    var i =1;
+    let o =2;
+    for(var k =0;k<1;k++){
+        var a =10;
+        let b=19;
+        console.log("输出全局变量");
+        console.log(i);
+    //A:  报错 console.log(o);
+         console.log("在局部中将let改为var报错");
+         //    var o=2323;
+         //   console.log(o);
+
+        console.log("输出在局部修改的全局变量");
+        var i =100;
+        let o =200;
+        console.log(i);
+        console.log(o);
+
+        console.log("-----");
+        console.log("输出局部变量");
+        console.log(a);
+        console.log(b);
+
+        console.log("-----");
+        console.log("输出循环变量");
+        console.log(k);
+    }
+        console.log("----------------------------------");
+        console.log("输出在局部修改后全局变量");
+        console.log(i);
+        console.log(o);
+
+        console.log("-----");
+        console.log(a);
+    //A：  报错 console.log(b);
+
+        console.log("-----");
+        console.log(k);
+
+        var num =20;
+        function fun() 
+        {
+           console.log(num); 
+           var num =20;
+        }
+        fun();
+
+
+        /*
+        let 只在所定义的代码层有效 同一作用于不能重复声明 所以A 报错
+        const  定义常量
+
+        在for循环中 var i =0  会一直占用内存  使用let
+
+        直接  a 没有使用 var和let 为默认为全局
+         
+        var 定义的并不是全局变量
+        
+        
+        
+        
+        
+        
+        */
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <script>
+      //值类型  string number loolean null undefinded
+      var a1 =null;
+      console.log(typeof a1); //返回一个空对象
+     /* a1.name ='张三';
+      console.log(a1['name']);
+      */
+      var sew = 'aaaaaaayasdasdxzvdsgbfdnbrtuytreg';
+      
+      var sew1 = 'aaabbbaayasdasdxzvdsgbfdnbrtuytreg';
+       console.log(sew.replace('n','ww'));
+      while( sew1.indexOf('a')!==-1){
+        sew1 =sew1.replace('a','+');
+      }
+       console.log(sew1);
+
+       var str = 'red,mark,wesa';
+       var str1 =str.split(',')
+       console.log(str1);
+
+       function fn(a){
+         a++;
+         console.log(a);
+         return a;
+       }
+       var x =10;
+       fn(x);
+       console.log(x);
+       //把一个值类型变量作为参数传给函数的形参时 把变量在栈里的值复制一份给了形参 在方法内部对形参做任何改变不会影响到外部变量
+      
+        
+
+
+       //复杂数据类型  通过new关键字创建的对象 如 object date arry
+       function Person(name){
+         this.name=name;
+         console.log(this.name); // 刘德华
+         console.log('我是第一个函数结尾的分割线');
+       }
+       function f1(x){ // x=p  相当于把在栈中p储存的地址赋给了x   x与p共同指向Person对象   
+         console.log(x.name); //刘德华 
+         x.name='张学友';
+         console.log(x.name); //张学友    通过x与p相同的地址和指向 对person中的name进行修改
+         console.log('我是第二个函数结尾的分割线');
+       }
+       var p = new Person('刘德华')
+         console.log(p.name);//刘德华
+         f1(p); 
+         console.log(p);
+         console.log(p.name);//  张学友   在f1中 通过x与p相同的地址和指向 对person中的name进行修改 所以地址指向的对象内容为修改后的内容
+         // p指向栈里面的地址  地址指向堆 而堆里面的name在f1中改成了张学友
+         ///引用类型变量传给形参时 把变量在栈空间里保存的堆地址复制给形参 形参和实参其实保存的是同一个堆的地址 所操作的是同一个对象
+         
+
+
+  </script>
+
+
+
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>0230023..
+    <style>
+      
+      div{
+        width: 100px;
+        height: 100px;
+        background-color: black;
+        float: left;
+        margin-left: 20px;
+        color: aliceblue;
+        text-align: center;
+        font-size: 70px;
+      }
+    </style>
+</head>
+<body>
+  <div></div>
+  <div></div>
+  <div></div>
+  <script>
+    var time =new Date();
+    var time1 =new Date(2022,4,28,16,08);
+  var times = time1 -time;
+  console.log(time);
+  console.log(time1);
+
+    var date   = Math.floor(times/1000/60/60/24);
+    var hours  = Math.floor(times/1000/60/60-date*24);
+    var second = Math.floor(times/1000/60-date*24*60-hours*60);
+    console.log(hours);
+    console.log(second);
+    console.log(date);
+    if(date<10){
+      minutes ='0'+minutes;
+    }
+    if(second<10){
+      second ='0'+second;
+    }
+    if(hours<10){
+      hours ='0'+hours;
+    }
+    var div=document.getElementsByTagName('div');
+    div[1].innerHTML=hours;
+    div[2].innerHTML=second;
+    div[0].innerHTML=date;
+
+
+  </script>
+    
+    <!-- <script>
+        //new 创建对象
+        var arr=new Array();
+        var obj=new Object();
+       //  obj.name='a';
+
+       //Date 日期对象 是一个构造函数 必须使用new 调用创建我们的日期对象
+       /*使用Date 
+            无参数： 返回当前系统的当前时间
+            有参数： '2022-1-24 8：8：8' 最好使用字符串
+                      */
+      /*  var date=new Date();
+        console.log(date);
+        console.log(date.getFullYear());
+        console.log(date.getMonth()+1);//0 +1 —— 11 +1月份
+        console.log(date.getDate()); //当天的日
+        console.log(date.getDay()); //星期几 0为周日
+        console.log(date.getHours());
+      */
+        //封装函数返回当前时间
+        function getTime (){
+            var time =new Date();
+            var time1=new Date(count);
+            
+            var year=time.getFullYear();
+            var month=time.getMonth()+1;  //返回0--11   加1后  为  1--12
+            var date=time.getDate();
+            var hours=time.getHours();
+            var second=time.getSeconds();
+           if(month<10){
+                month='0'+month;
+            }
+            second = second > 10 ? second : '0' + second;
+            var nowTime = year+':'+month+','+date+' '+hours+':'+second;
+            return nowTime;
+        }
+      console.log(getTime());
+      console.log(down('2022-1-24 0:00:0'));
+
+    </script> -->
+</body>
+</html>

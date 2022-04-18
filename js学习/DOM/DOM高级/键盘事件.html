@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        document.onkeyup=function(){
+            console.log("按键被松开后触发");
+        }
+        document.addEventListener('keyup',function(){
+            console.log('按键被松开后触发1');
+        })
+
+        document.addEventListener('keydown',fun3232tion(){
+            console.log('按键按下后触发,一直按则多次触发');
+        })
+
+        //先触发按下后触发松开
+    </script> -->
+
+    <script>
+        document.addEventListener('keyup',function(e){
+         console.log(e);
+         console.log(e.key);
+        })
+    </script>
+    
+</body>
+</html>

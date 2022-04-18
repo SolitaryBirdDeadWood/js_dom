@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text1{
+            border: 3px solid #1d1dda;
+            font-size: 30px;
+        }
+        input{
+            height: 47px;
+            width: 300px;
+            color: #999;
+            outline: none;
+        }
+        .div1{
+            text-align: center;
+            position: relative;
+            margin: 100px auto;
+        }
+        img{
+            position: absolute;
+            top: 1px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+     <input type="text" class="text1" value="手机">
+    <label for="">
+       <img src="../素材/搜索2.png" alt="" class="img1">
+    </label>
+    </div>
+    <script>
+        var input=document.getElementsByClassName('text1');
+        input[0].onclick =function(){
+            if(this.value=='手机'){
+                this.value='';
+            }
+            this.style.color='black';
+        }
+        input[0].onblur=function(){
+            if(this.value===''){
+                this.value='手机';
+            }
+            this.style.color='darkgray';
+        }
+
+    </script>
+
+</body>
+</html>
+<script>
+    //使用 outline：none 去掉点击表单后产生的颜色
+    /*
+    onclick 是鼠标点击
+    onfocus 是获得焦点  获得焦点是可以通过多种方式获得 如鼠标点击或者tab等
+    
+    */
+</script>

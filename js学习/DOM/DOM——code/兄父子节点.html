@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: aqua;
+            width: 200px;
+            height: 200px;
+            color: blue;
+        }
+        p{
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+  <div>
+      我与p标签 同级
+      <p>这是p标签</p>
+
+      <ul class="s1">
+          <li>1</li>
+          <li>1</li>
+          <li>1</li>
+      </ul>
+  </div>
+    <span>我是span1和div是兄弟</span>
+  <div class="div"> 我是div和span是兄弟  </div>
+  <span>我是span2和div是兄弟</span>
+
+  <!-- 父级节点 -->
+  <script>
+     var div =document.getElementsByTagName('div');
+      var p =document.getElementsByTagName('p');
+    //  p.PannerNode 得到离元素最近的父级节点
+
+
+
+
+  </script>
+
+  <!-- 子级节点 -->
+  <script>
+      var ul =document.getElementsByClassName('s1');
+      var li1= ul[0].childNodes;/*获得li的节点 又包括换行和li里面的内容*/
+     
+    /*常用*/ var li2 =ul[0].children ;
+
+  </script>
+
+  <!-- 子节点的第一个和最后一个 -->
+  <script>
+      var ul =document.getElementsByClassName('s1');
+      var first_li  = ul.firstElementChild; //获得第一个元素子节点
+      var last_li   = ul.lastElementChild  ;   //获得最后一个元素子节点
+  </script>
+
+<!-- 兄弟节点 -->
+    <script>
+   var div =document.getElementsByClassName('div');
+   console.log(div[0].previousElementSibling);
+   console.log(div[0].nextElementSibling);
+    </script>
+</body>
+</html>
+<script>
+/*
+之前讲到使用获取元素
+    document.getElementById();
+    document.getElementByTaName();
+    document.querySelector();
+
+
+使用节点层级关系获取元素
+        利用父子关系获取元素
+
+
+节点       
+        网页中所有内容（标签 属性 文本 注释 等）都为
+
+        节点名称 nodeName
+        节点值   nodeVAlue
+        节点类型 nodeType
+   （常用） · 元素节点 值为 1
+            · 属性节点 值为 2
+            · 文本节点 值为 3 （包括文字 空格 换行）
+
+
+ 获得父：
+    子.parentNode  为一个集合
+
+ 获得子： 
+         1. 得到所有子节点
+              父.childNodes   为一个集合
+                  console.log(ul.childNodes[1].nodeType);  得1  判断是不是元素节点
+ （常用）2. 得到元素节点 返回一个集合
+             父.children[i];
+
+         3.获取第一个和最后一个子元素
+            ul.child[0]--------------------->ul.firstElementChild       
+            ul.child[ul.child.length-1]----->ul.lastElementChild
+     
+ 获得兄弟节点
+         1.兄.nextElementSibling；
+         2.兄.previousElementSibling；
+
+
+
+*/
+</script>

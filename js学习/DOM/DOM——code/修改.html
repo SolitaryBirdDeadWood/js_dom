@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="q1">熊</button>
+    <button class="q2">狮子</button>
+    <br>
+    <img src="../素材/4487ef73-97d5-4218-884d-042aed26df71.jpg" title="熊"
+    style="width: 100px;height:50px;">
+
+
+    <div style="background-color: blue;">----------------------------------分割线----------------------------------------------------</div>
+   
+    <p></p>
+    <button class="z1">清空</button>
+    <input type="text" value="请输入内容">
+
+    <div style="background-color: blue;">----------------------------------分割线----------------------------------------------------</div>
+
+        <script>
+            var but=document.getElementsByClassName('z1');
+            var input1=document.getElementsByTagName('input');
+            but[0].onclick=function(){
+                input1[0].value='';
+             //   but[0].disabled=true; //使按钮失效 
+             this.disabled=true; //this总是指向调用它所在方法的对象 指向时间函数的调用者
+            }
+        </script>
+
+        <script>
+        var q1_ =document.getElementsByClassName('q1');
+        var q2_=document.getElementsByClassName('q2');
+        var img_ =document.getElementsByTagName('img');
+        
+        
+        q1_[0].onclick=function(){
+            img_[0].src="../素材/4487ef73-97d5-4218-884d-042aed26df71.jpg"
+            img_[0].title="熊";
+        }
+        q2_[0].onclick=function(){
+            img_[0].src="../素材/狮子.jpg";
+            img_[0].title="狮子";
+        }
+
+        </script>
+</body>
+</html>
+<script>
+//     img_[0].title="狮子";   名字.属性=".............."
+
+
+//表单的禁用
+/*
+            but[0].onclick=function(){
+                input1[0].value='';
+             //   but[0].disabled=true; //使按钮失效 
+             this.disabled=true; //this总是指向调用它所在方法的对象
+            }*/
+
+
+
+</script>

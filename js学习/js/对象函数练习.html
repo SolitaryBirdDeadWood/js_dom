@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //new 创建对象
+        var arr=new Array();
+        var obj=new Object();
+       //  obj.name='a';
+
+       //Date 日期对象 是一个构造函数 必须使用new 调用创建我们的日期对象
+       /*使用Date 
+            无参数： 返回当前系统的当前时间
+            有参数： '2022-1-24 8：8：8' 最好使用字符串
+                      */
+      /*  var date=new Date();
+        console.log(date);
+        console.log(date.getFullYear());
+        console.log(date.getMonth()+1);//0 +1 —— 11 +1月份
+        console.log(date.getDate()); //当天的日
+        console.log(date.getDay()); //星期几 0为周日
+        console.log(date.getHours());
+      */
+        //封装函数返回当前时间
+        function getTime (){
+            var time =new Date();
+            var year=time.getFullYear();
+            var month=time.getMonth()+1;  //返回0--11   加1后  为  1--12
+            var date=time.getDate();
+            var hours=time.getHours();
+            var second=time.getSeconds();
+           if(month<10){
+                month='0'+month;
+            }
+            second = second > 10 ? second : '0' + second;
+            var nowTime = year+':'+month+','+date+' '+hours+':'+second;
+            return nowTime;
+        }
+      console.log(getTime());
+
+      //倒计时案例
+      function down(time){
+          var now =+new Date();  
+          var future=+new Date(time);    //获取输入时间的毫秒数
+          var count	 = (future-now)/1000     //1秒=1000毫秒;
+         var second = count%60;      //剩余的秒数
+          var minute =count/60 %60;  //总分数%60 转为剩余分数
+          var hour   =count/60/60%24;//总时数%24 转为剩余小时
+          var date   =count/60/60/24;//总时/24 求天数
+           function z(time){
+           time=time>10?time:time;
+           return time;
+           }
+           hour=Math.trunc(z(hour));
+           minute=Math.trunc(z(minute)) ;
+           second=Math.trunc(z(second)) ;
+
+          return date+'天'+hour+'时'+minute+'分'+second+'秒';
+      }
+    
+      console.log(down('2022-1-24 0:00:0'));
+
+
+  
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      
+        /*
+        js 运行分两步：  预解析   代码执行
+        把 var 还有function 提升到当前作用域最前面 代码从上往下执行
+  
+        预解析：
+        变量提升 把所有变量声明提升到当前作用域的最前面 不提升赋值操作
+        函数提到 把所有函数声明提升 不调用
+  
+        提升变量    提升函数说明
+        */
+
+
+        console.log(a);
+        var a = 10;
+        //1 报错
+        /*
+        1. 提升      var a;   提升变量不提升赋值
+        2.           console.log(a);  执行 后 a没有值
+        3.           a=10;
+        */
+
+
+
+
+
+        mn();
+        function mn() {
+            console.log(20);
+        }
+        //2  不报错
+
+
+
+        fw();
+        function fw() {
+            console.log(50);
+        }
+        //不报错
+        /*
+        在声明函数的前后都可以 
+        1.function fw(){
+            console.log(50);
+        }   提升
+        2. fun();
+        */
+     //   fun();
+
+
+
+
+
+        var fun = function () {
+            console.log(30);
+        }
+        //3 报错
+        /*
+        var fun = function(){} 中 fun 为变量名不为 函数名
+        1. var fun ；
+        2. fun();   把变量和函数提升  函数调用 上面没有封装的函数执行为unfined
+        3. fun=function(){ console.log(30)}  赋值的声明无法提升 可以看成一个值
+        */
+
+
+
+
+        var s1 = 10;
+        s2();
+        function s2() {
+            console.log(10);
+            var s1 = 20;
+        }
+        //报错 undefined
+    /*
+        提升 两个声明
+        1.  var s1
+        2.   function s2(){ //一个作用域 提升内部声明
+           var  s1;
+            console.log(10);    //作用域链 选择最近的  var s1  不是s1 =20   后者没有声明不算
+             s1 =20;
+        }
+        3. s1 = 20;  
+        4. s2(); 上面的函数提升但是没有调用 这个才是调用
+    
+           
+        */
+
+{
+      f1();
+      console.log(c);
+      console.log(b);
+      console.log(a);
+
+      function f1(){
+          var a111=b=c=9;
+        console.log(c);
+      console.log(b);
+      console.log(a111);
+      }
+
+      var a1 =18;
+
+      function fu() {
+        var b1 =9;
+        console.log(a1); //un
+        console.log(b1); //9
+        var a1 = 20;
+      }
+
+      fu();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+      /*
+    1.
+     function f1(){
+         //在内部中 var a=b=c=9;  相当于 
+         var a =9; 
+         b=9;
+         c=9;
+         b和c 为全局变量    区分 集体声明 var a=9,b=9,c=9
+
+        
+         
+        
+        var a;  a为局部变量
+        a=b=c=9;
+        console.log(c);
+      console.log(b);
+      console.log(a);
+      }
+    2.
+     f1();
+      console.log(c);
+      console.log(b);
+      console.log(a);
+
+      */
+
+
+
+
+// 作用于链  链式查找    内部函数访问外部函数的变量 
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

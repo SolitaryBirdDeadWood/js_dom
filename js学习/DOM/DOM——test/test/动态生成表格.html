@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 400px;
+            margin: 100px auto;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        table{
+            border-collapse: collapse;
+            text-align: center;
+            width: 500px;
+        }
+        td,
+        th {
+            border: 1px solid #333;
+        }
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <table>
+            <thead>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>行为</th>
+                <th>事件</th>
+                <th>操作</th>
+            </thead>
+            <tbody>
+
+            </tbody>
+          
+        </table>
+    </div>
+    <script>
+        var s1 ={
+            name:'王晨晨',
+            年龄 :25,
+            行为:'减肥，天天换小鲜肉',
+            事件:'渣女'
+        }
+        var s2 ={
+            name :'戴新瑞',
+            年龄 :19,
+            行为:'增肉',
+            事件:'锻炼'
+        }
+        var s3 ={
+            name :'背锅侠',
+            年龄 :25,
+            行为:'哭',
+            事件:'被安慰'
+        }
+      var together =[s1,s2,s3];
+      var table =document.getElementsByTagName('table');
+      var tbody =document.getElementsByTagName('tbody');
+      for(var i1 =0;i1<together.length;i1++){
+         //创建行 
+          var tr =document.createElement('tr');
+          tbody[0].appendChild(tr);
+          for( var k in together[i1]){ //together 为一个数组 together[i1]表示的是第几个
+             
+            //创建格子 并且开始赋值
+              var td =document.createElement('td');
+              tr.appendChild(td);
+              td.innerHTML=together[i1][k]; //将数组中第i1个对象的属性k 赋值给从td获取的内容
+              tr.appendChild(td);
+            }
+            /*  console.log("====");
+            console.log(k); 输出属性
+            console.log(together[i1]); //输出数组中第i1个对象
+            console.log("+++++");
+            console.log(together[i1][k]); //输出第i1个对象属性值
+            */
+
+
+           //3.在添加完所有数据后才能进行
+           var td2 =document.createElement('td');
+           td2.innerHTML='<a href="#">删除</a>';
+           tr.appendChild(td2);
+             
+            }
+            //4. 删除
+            var aq =document.getElementsByTagName('a');//td2.getElementsByTagName('a');
+            console.log(aq.length);
+            for(var i =0;i<aq.length;i++){
+                aq[i].onclick=function(){
+                console.log(i);
+                 tbody[0].removeChild(this.parentNode.parentNode);
+        }
+      }
+
+    </script>
+</body>
+</html>
+<script>
+    /*
+for(var k in obj){
+    k 得到的是属性名
+    obj[k]得到的是属性值
+}
+
+
+aq.length 的长度为1 并且 为什么只是删除最后一个
+*/
+</script>

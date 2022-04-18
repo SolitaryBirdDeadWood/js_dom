@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color:black
+            
+        }
+    </style>
+</head>
+<body>
+    <!-- 1s = 1000毫秒 -->
+    <button>点击停止定时器</button>
+    <div>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate quis totam odio consequatur soluta ut provident delectus itaque perferendis harum dolore eligendi, non at consequuntur iste esse quam voluptates assumenda!
+    </div>
+
+
+   <!--单次定时器  -->
+<script>
+    var body =document.getElementsByTagName('body');
+    setTimeout(function(){
+        console.log("第一个定时器发作了");
+        body[0].style.backgroundColor='red';
+        setTimeout(function() {
+            console.time("a1");
+            console.log('第二个定时器发作了');
+            body[0].style.backgroundColor='green';
+            console.timeEnd("a1");
+        },1000*0.5);
+    },1000*2);
+
+    //一般化都会给定时器命名
+    var time1 =setTimeout(function(){
+        console.log('爆炸');
+        
+    },5*1000);
+    
+    //停止定时器
+    var button = document.getElementsByTagName('button');
+    button[0].addEventListener('click',function(){
+        clearTimeout(time1);
+    })
+</script>
+  <!-- 多次定时器 -->
+  <script>
+      var div =document.getElementsByTagName('div');
+      setInterval(function(){
+          var count1 =0;
+          var count2=0;
+
+          div[0].style.backgroundColor='blue';
+          console.log('你好,这是第1层');
+          count1++;
+          console.log(count1);
+          setInterval(function(){
+          div[0].style.backgroundColor='blueviolet';
+          console.log('你好这是第2层');
+          count2++;
+          console.log(count2);
+      },2*1000)
+
+
+      },3*1000)
+  </script>
+</body>
+</html>

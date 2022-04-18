@@ -1,0 +1,195 @@
+事件触发
+
+     分类
+          1.事件源:    被触发的对象
+          2.事件类型 ： 如何被触发  如：鼠标点击(onclick) 滑动滚轮 键盘输入
+          3.事件处理程序：通过什么触发   如：通过一个函数赋值的方式完成
+     格式：
+        事件源.事件类型=函数；  如果获取的返回为数组需要具体指定
+        如： s1.onclick=function(){}
+
+
+
+事件类型
+
+           onclick 鼠标点击
+           onmouseover 鼠标经过
+           onmouseout  鼠标离开
+
+
+           innerText 修改元素内容  =后面不识别html标签
+            innerHTML  = 后面 识别HTML标签 并且起到和 innerText同样效果
+
+    这俩个属性都是可读取的 
+          innerText读取的内容为该标签里面所以txt 去掉空格和换行的纯文本
+           innerHTML读取的内容为 该标签里面的所有内容 标签以文本形式显示 空格和换行保留
+
+    若不添加事件类型
+    直接覆盖原来内容 显示所操作的
+
+
+获取id
+          A： document.getElementById(id)
+               1.因为加载方式为从上往下 document.getElementById(s) 必须要写到获取元素的下面
+               2. s为一个字符串
+               3.返回一个 对象
+
+          B：通过标签名获得id
+                1.返回一个对象的 集合（伪数组）
+                2.若该标签不存在返回空集合
+
+            document.getElementsByTagName(m)指的是获取全页(document)中的某个标签
+
+            单个父元素.getElementsByTagName(m)  指的是从父元素中获取某个子元素
+
+          C：通过类名获取标签
+            document.getElementsByClassName('类名');
+             返回一个集合
+
+          D：document.getElementsByName('name')
+
+            getElementById(id) 返回对象
+            getElementByTagName('标签名') 返回集合
+            getElementByClassName(m) 返回集
+
+
+
+修改
+    1.使用行内样式来修改
+        element.style.属性=''；
+
+    2.使用类名样式操作  .className
+
+         在<style></style> 中 定义一个 使用类来添加属性  .change{}
+             在使用函数的事件类型  对该标签直接添加类名
+            相当于直接 对原类名进行改变 使用所准备的类名
+            直接添加所准备的类名中的属性
+             className 会直接更改元素的类名，覆盖原来的类名
+         如若要保存原先的类名  
+             this.clsaName='旧类名+空格+新类
+
+             //表单的禁用
+/*
+            but[0].onclick=function(){
+                input1[0].value='';
+             //   but[0].disabled=true; //使按钮失效 
+             this.disabled=true; //this总是指向调用它所在方法的对象
+
+            }*/
+
+
+获取属性：getAttribute('属性') 的到元素的属性值
+        
+        获取的名字.getAttribute('id');
+        名字.id;
+
+
+修改属性：setAttribute('属性')；
+        名.setAttribute('属性',修改成的内容);  内容加不加''根据是数字还是字符
+        
+        名.className ='a2';
+         名.setAttribute('class','s1');
+
+
+移除属性： removeAttribute(属性);
+
+        名.removeAttribute();
+
+
+          /*
+排他思想：
+        通过两个for循环 对同一种操作效果进行来回切换
+            外层循环进行效果增加  内层循环进行效果删除
+                干掉其他人 留下自己
+                  清楚样式
+                  增加样式
+                 */
+
+/*
+创造添加节点：（一开始的文章评论是空的，发表一个评论 相当于创建增加一个节点）
+    document.createElement(创建的元素);
+    父.appendChild(要添加的标签);    添加到末尾
+    父.insertBefore(创建的元素，指定子元素); 添加到指定子元素的前面
+ 
+
+
+删除节点
+  node.removeChild(child);     node表示节点
+
+
+
+*/
+
+
+
+
+
+
+
+/*
+总结：       查：
+             getElementByClassName
+             getElementById
+             getElementByTagName
+             querySelector
+             querySelectorAll
+            创建：
+                  innerHTML
+                  createElement
+
+             增加：
+                  appendChild  在末尾添加
+                  insertBefor  在开头添加
+            
+            修改：
+                 元素属性：
+                      
+                      src
+                       href 
+                        title 等  
+                 元素内容：
+                      innerHTML  
+                  修改表单元素：
+                       value  type  disabled           （this.disabled=true）
+                  修改样式：
+                      style  ：   box.style.height=300+'px';   d.style.color = '#f00';
+                      ClassName ： d.className += ' b';
+              
+            获取：
+               parentNode  
+               children   
+               1.兄.nextElementSibling；
+               2.兄.previousElementSibling； 
+
+             子节点
+              var b =document.getElementById("test").childNodes; (firstChild,lastChild)
+              var getFirstChild = document.getElementById("test").children[0];、
+            父节点：
+               var p = document.getElementById("test").parentNode;
+
+            兄弟节点：
+              var brother1 = document.getElementById("test").parentNode.children[1];
+
+            自定义属性： 属性名加双引号
+              setAttribute ：dom.setAttribute(‘index’, ‘0’);
+              getAttribute
+              removeAttribute
+
+
+
+               div.setAttribute('class','a');  ---------》d.className = ' b';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/

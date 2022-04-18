@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      //  alert('弹出窗口')
+        console.log('控制台显示');
+      //  var input=prompt('用户输入');
+
+        var s1,s2,s3;
+        s1=10;
+        s2=11;
+        s3=12;
+
+        // 可以将其与 ''空字符串相加 toString()   String()  
+        var a1 = 12;
+        var a2 =a1.toString(); //转为字符串
+        var a3 = String(a1);
+
+        var b1 =10>5?'是':'不是';
+
+
+
+//数组
+
+
+        var a4=['ni',12,true,null,[1,2,3,4]];
+        a4[1]=13;
+        var a5 =new Array(1,2,8,6,7,10,3);
+        console.log(a5);
+
+        var arr = [4, 6, 10];
+    /* 给下标为 8 的元素赋值为 80.  由于最初长度为 3 ，
+       这个赋值操作完成后，数组的长度会自动增长为11*/
+       arr[8] = 80;
+       console.log(arr.length);  // 弹出：9
+       console.log(arr[5]); //弹出：undefined
+    // 没有赋值的元素默认都为 undefined
+
+       console.log(arr[20]);     //undefined
+       console.log(arr.length);  // 没有进行赋值操作 弹出9
+
+    //数组遍历
+    // 把数组的下标赋值给index 
+       for(var index in a5){
+           console.log(a5[index]);
+       }
+    //使用匿名函数遍历
+       a5.forEach(function(a,b){ //a:遍历的元素  b:遍历的元素的下标
+           console.log(a);
+           console.log(b);
+       })
+    //toString() 转换字符串 以逗号连接每个元素  
+    //join("=") 转换成字符串 以双引号内容符号进行连接 例为=
+
+
+    //添加删除
+       //添加 push unshift 二者都返回改变后数组的长度
+         var test1=[1,2,3,4,5];
+         console.log(test1.push(101,201));  //push在数组末尾添加一个或多个元素并返回添加后数组的长度
+         console.log(test1.unshift(110,220)); //unshift 将一个或多个元素添加到数组开头并返回长度
+       // 删除
+       console.log(test1.length);
+          delete test1[0]; //删除指定位置的元素但是数组长度不变  相当于把指定位置的元素换为undefined
+          console.log(test1.length);
+          console.log(test1[0]); 
+
+          var sz=test1.pop();  // 删除数组最后一个元素 并返回该元素 
+          console.log(sz);
+          console.log(test1);
+
+          //shift删除数组第一个元素 并返回该元素
+
+          //尾两p 一加一减   push 加末尾 反长度   pop减末尾 反删除
+    
+    //查找下标
+          //indexOf(object,index) 从index开始查找object的下标
+    //返回字符
+          //charAt(index)
+          
+    //截取
+         //substr(index,length) 从 index开始 截取_长度的字符
+    //替换 
+         //replace(被替换,替换成) 若有重复只从前开始替换第一个
+         var s11="dasdasdxzdf"
+         console.log(s11.replace('a','++'));
+
+
+
+
+
+
+       
+       
+//冒泡
+
+        for(var i =0;i<a5.length-1;i++){
+            for(var j=0;i<a5.length-i-1;i++){
+                if(a5[j]>a5[j+1]){
+                    var temp =a5[i];
+                    a5[i]=a5[i+1];
+                    a5[i+1]=temp;
+                }
+            }
+        }
+    var arr1 = [10,1,5,2,3];
+    arr1.sort(function(a, b) {
+        return a - b;
+    });
+    console.log(arr1);
+
+
+
+//函数
+
+//对象
+    var sj ={
+        name:'孙悟空',
+        age:19,
+        action:function say() {
+            console.log('你好');
+        }
+    }
+    
+    var s1 =new Object();
+    s1.sex='男';
+    console.log(s1.sex);
+
+    //
+    
+    //对象的属性的使用
+    console.log(sj.name);
+    console.log(sj['name']);
+   // sj.acton();
+    sj.say;
+
+    var a =2;
+    var b=9;
+    console.log();
+   
+
+
+
+
+
+        
+
+     
+
+           
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

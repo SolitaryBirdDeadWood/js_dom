@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #s1 {
+            color: brown;
+            outline: none;
+            border: 3px solid rgb(26, 177, 147);
+        }
+
+        .input1 {
+            border: 2px solid rgb(20, 120, 148);
+            background-color: rgb(11, 132, 157);
+        }
+
+        .change {
+            background-color: rgb(231, 146, 146);
+            color: darkgray;
+            font-size: 40px;
+            list-style-type: none;
+        }
+
+        /* 对li 里面通过 js 添加的 a 进行样式修改 */
+        li a {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <textarea name="" id="s1" cols="80" rows="2"></textarea>
+        <br>
+        <input type="button" value="发布" class="inpute1">
+        <input type="button" value="删除" class="inpute2">
+
+    </div>
+    <div>
+        <ul>
+
+        </ul>
+    </div>
+
+    <script>
+        var text = document.getElementsByTagName('textarea');
+        var button = document.getElementsByTagName('input');
+        var ul = document.getElementsByTagName('ul');
+
+        button[0].onclick = function () {
+            if (text[0].value == '') {
+                this.className = 'change input1';
+                button[0].disabled = 'true'; //俺按钮失效
+                alert('您没有输入信息');
+                return false;
+            } else {
+                var li = document.createElement('li');
+                li.innerHTML = text[0].value + "<a href='#'>删除</a>";
+                //ul[0].appendChild(li);
+                ul[0].insertBefore(li, ul[0].children[0]);
+                li.className = 'change';
+                text[0].value = '';
+                var as = document.getElementsByTagName('a');
+                for (var i = 0; i < as.length; i++) { //给每一个a 添加事件
+                    as[i].onclick = function () {
+                        ul[0].removeChild(this.parentNode);
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

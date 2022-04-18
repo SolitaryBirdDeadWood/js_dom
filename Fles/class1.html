@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .s2{
+            background-color: aqua;
+            width: 400px;
+            height: 800px;
+            display: flex;
+            flex-direction:row;
+            /* flex-direction: column-reverse; 
+            设置y为主轴 并且旋转方向 */
+
+            /* justify-content: flex-end; */
+             /* justify-content: flex-end;  */
+             justify-content:space-around;
+             flex-wrap: wrap;
+        }
+        .s1{
+            background-color: blue;
+            width: 150px;
+            height: 120px;
+            border-left:2px solid red ;
+            color: burlywood;
+            font-size: 50px;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="s2">
+        <div class="s1">1</div>
+        <div class="s1">2</div>
+        <div class="s1">3</div>
+        <div class="s1">4</div>
+        <div class="s1">5</div>
+    </div>
+</body>
+</html>

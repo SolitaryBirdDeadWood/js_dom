@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        //查找某字符串中某一字符出现的位置以及次数
+var str='abcoefoxyozzopp';
+var count=0;
+/* for(var i =0;i<str.length;i++){
+    var index=str.indexOf('o',index+1);
+    if(index!=-1){
+        count++;
+        console.log(index);
+    }
+    else{
+        break;
+    }
+}*/
+
+ /* var index =str.indexOf('0');
+  for(var i =0;i<str.length;i++){
+    var index=str.indexOf('o',index+1);
+    if(index!=-1){
+        count++;
+        console.log(index);
+        index=str.indexOf('0',index+1);
+    }
+  }*/
+  var index =str.indexOf('0');
+  while (index!=-1) {
+      console.log(index);
+      count++;
+      index=str.indexOf('0',index+1);
+  }
+console.log(count);
+
+
+//位置返回字符 
+var str1='qwert';
+console.log(str1.charAt(2));
+console.log(str1[2]);
+
+
+
+
+
+
+var ob={
+         name:'戴新瑞',
+         age :'19',
+         call:1765834449,
+         action:function(){
+             console.log('hi');
+         }
+     }
+     //输出
+      console.log(ob.name); //输出键所对应的值
+      console.log(ob['age']); //输出键所对应的值
+      ob.action(); //执行函数
+
+     if(ob['age']){
+         console.log('里面有该属性');
+     }else{
+         console.log('里面没有该属性');
+     }
+
+     //统计出现最多的字符和次数
+     var str='abcoefoxyozzopp';
+     var o={};
+    for(var i=0;i<str.length;i++){
+        var chars=str.charAt(i);
+        if(o[chars]){
+            o[chars]++;
+        }else{
+            o[chars]=1;
+        }
+    }
+    console.log(o);
+    var max =0;
+    var ch='';
+    for(var k in o){
+        //k 得到是属性名
+        //o[k]得到属性值
+        if(0[k]>max){
+            max=o[k];
+            ch=k;
+        }
+    } 
+console.log(max);
+console.log(ch);
+console.log('答案是o 和 4 上面写的有缺陷');
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

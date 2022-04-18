@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Car(name ,price){
+            this.name=name;
+            this.price=price;
+            this.getPrice=get
+            name1:'小马达';
+        }
+        //抽象方法为全局方法
+        var get=function(){
+                console.log(this.price);
+            }
+        var a1 =new Car('法拉利',10);
+        a1.getPrice();
+
+    function Phone(brand){
+        this.brand=brand;
+
+           //在Phone类中的原型对象添加方法
+        Phone.prototype.getName=function(){
+            return this.brand;
+        }
+    }
+    var z1 =new Phone('华为');
+    console.log(z1.getName());
+    
+//类
+    console.log('------------------------------');
+    class name{
+        constructor(x,y){// constructor 里面的this 指向的是创建的实例对象
+            this.x=x;
+            this.y=y;
+        }
+        sum(){
+            console.log(this.x+this.y);
+        }
+    }
+    var user =new name(5,4);
+    user.sum();
+
+//     let Person1a = class Person1a {
+//   constructor(x, y) {
+//     this.x = x
+//     this.y = y
+//   }
+
+
+  
+
+
+//类的继承
+ class Father {
+	star(){
+		console.log("Father 中的 star 的方法")
+	}
+	sing() {
+		console.log("Father 中的 sing 方法")
+	}
+}
+class Son extends Father{
+	sing() {
+		console.log("Son 中的 sing 方法")
+	}
+}
+const user2 =new Father();
+const user1 = new Son()
+user1.sing() // Son 中的 sing 方法
+user1.star()  // Father 中的 star 的方法
+user2.sing(); // Father
+user2.star();//Father
+
+console.log('------------------');
+//super
+class Father {
+	constructor(x,y) {
+		this.x = x
+		this.y = y
+	}
+	sum() {
+		console.log(this.x + this.y)
+	}
+}
+class Son extends Father{
+	constructor(x,y){
+		super(x,y) 
+		this.x = x
+		this.y = y
+	}
+}
+const user = new Son(5,5)
+user.sum() // 10
+
+
+
+    </script>
+</body>
+</html>

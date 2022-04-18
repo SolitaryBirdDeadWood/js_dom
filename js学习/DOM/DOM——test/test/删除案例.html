@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <ol type="1">
+        <li>王晨晨</li>
+        <li>戴新瑞</li>
+        <li>背锅侠</li>
+        <li>黄脸婆</li>
+    </ol>
+    <input type="text" value="请输入删除的序号">
+    <br>
+    <input type="button" value="删除">
+
+    <script>
+
+        var  li =document.getElementsByTagName('li');
+        var ol=document.getElementsByTagName('ol');
+        var input =document.getElementsByTagName('input');
+          input[0].onclick=function(){
+                this.value='';
+            }
+
+            for (var i =0;i<li.length;i++){
+                
+            }
+
+    
+
+
+
+
+
+
+
+
+
+
+    /*   for(var i =0;i<li.length;i++){
+            li[i].setAttribute('index',i); //修改 index 为 i
+           }
+
+            input[1].onclick=function(){
+                var is =Number(input[1].innerHTML) ;  //is 为String 类型
+             /*   console.log(is);
+                console.log(typeof(is));*/
+             /*   if(is==li[is].getAttribute('index')){
+                    ol[0].removeChild(li[is]);
+                }
+
+            }*/
+
+      /*      input[0].onclick=function(){
+                this.value='';
+            }
+            for(var s =0;s<li.length;s++){
+         ol[0].removeChild(li[s]);
+        }  //为什么删的是俩个
+*/
+    </script>
+</body>
+</html>

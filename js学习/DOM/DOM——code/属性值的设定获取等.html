@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .s1{
+            background-color: bisque;
+            width: 100px;
+            height: 120px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="s1"></div>
+    <div class="s2" index="1"></div>
+    <div class="s3" index="2"></div>
+
+<!-- 属性值的获取      -->
+    <script>
+    var div =document.getElementById('s1');
+    console.log(div.id);
+    var infor =  div.getAttribute('id')
+    console.log(div.getAttribute('height'));
+        console.log(infor);
+    </script>
+
+<!-- 属性值的修改 -->
+<script>
+    var div =document.getElementsByClassName('s2');
+    div.className='a2';
+    console.log(div.index);
+    console.log('------------------------');
+    console.log(div.setAttribute('index',2));
+    console.log(div.setAttribute('class','ss1')); //特殊的  修改claa名字 使用 class  不是clasName
+
+
+
+
+
+
+</script>
+
+<!-- 属性的移除 -->
+<script>
+    var div =document.getElementsByClassName('s3');
+    div.removeAttribute('index');
+</script>
+</body>
+</html>
+<script>
+/*
+获取属性：getAttribute('属性') 的到元素的属性值
+        
+        获取的名字.getAttribute('id');
+        名字.id;
+
+
+修改属性：setAttribute('属性')；
+        名.className ='a2';
+        名.setAttribute('属性',修改成的内容);  内容加不加''根据是数字还是字符
+         名.setAttribute('class','s1');
+
+
+移除属性： removeAttribute(属性);
+
+        名.removeAttribute();
+
+
+
+        
+
+
+
+
+
+
+
+
+*/
+
+
+</script>

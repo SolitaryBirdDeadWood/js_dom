@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+     var name1 =['a','b','v'];//数组
+     
+     //创建对象
+     var obj={
+         name:'戴新瑞',
+         age :'19',
+         call:1765834449,
+         action:function(){
+             console.log('hi');
+         }
+     
+     } 
+     //输出 
+     console.log(obj.name);
+      obj.action();
+      console.log(obj['age']);
+     
+     //创建
+     var obj =new Object();
+     obj.name='张三';
+     obj.age=18;
+     //删除属性
+     delete obj.age
+     console.log(obj);
+     
+//遍历对象
+var e={
+    age:19,
+    age2:18,
+    age3:17,
+    age4:16,
+}
+for(var k in e){
+    console.log(e[k]);//输出属性值
+    console.log(k); //输出属性
+}
+     //构造函数
+      function Ge (a,b,c){
+          this.name=a;
+          this.age =b;
+          this.sex=c;
+      }
+      var a1 = new Ge('张三',18,'男');
+      console.log(a1.name);
+        
+      function sc (name,age){
+         this.name=name;
+         this.age=age;
+         this.action=function(){
+           console.log('你好啊');
+         }
+      }
+      var ssq1 =new sc('王晨晨',26);
+      console.log(ssq1['name']);
+      console.log(ssq1.age);
+     
+     
+     
+     // 对象解构
+      let {name,age,sex} =a1;
+      console.log(name);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

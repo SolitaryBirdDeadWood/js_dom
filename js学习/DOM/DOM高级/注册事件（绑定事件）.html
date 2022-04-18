@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="s1">传统注册方式</div>
+    <div class="s2">方法监听事件</div>
+
+
+
+    <script>
+        var s1 =document.getElementsByClassName('s1');
+        var s2=document.getElementsByClassName('c2');
+
+    //1. 传统监听方式
+            s1[0].onclick=function(){
+                alert('传统')
+            }
+            s1[0].onclick=function(){
+                alert('传统方法')
+            }
+
+    //2. 时间监听方式
+            s2[0].addEventListener('click',function(){
+                alert('事件监听1');
+            })
+            s2[0].addEventListener('click',function(){
+                alert('事件监听2');
+            })
+            
+    </script>
+</body>
+</html>
+
+<script>
+    /*
+    传统事件：
+        具有唯一性 同一个元素用一个时间只能设置一个处理函数
+        最后的会覆盖前面注册的处理函数
+
+    方法监听注册方式：
+      同一个元素同一个事件可以注册多个监听器（相当于函数）按照顺序依次执行
+     
+    对象.addEventListener（type,listener,useCapture）; 括号里面为字符串
+
+    type:  事件类型   click  mouseover    （不带on）
+    listener： 事件处理函数，事件发生时 调用该监听函数
+    useCapture： 可选参数 是一个布尔值，默认是false
+
+
+    
+    
+    
+    */
+</script>

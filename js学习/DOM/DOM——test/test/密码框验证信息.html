@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 400px;
+            margin: 100px auto;
+            /*  子绝父相
+            */
+            position: relative;
+        }
+
+        .i1{
+            border: 2px solid #d5d0d6;
+            height: 18px;
+            outline: none;
+
+        }
+        /* .img1{
+            position: absolute;
+            top: 5px;
+            right: 130px;
+        }*/
+        .p1{
+            font-size: 10px;
+            display: inline-block;
+            color: #9a9899;
+            background-image: url(../素材/感叹号0.png)   ;
+            background-repeat: no-repeat;
+            background-position: left center;
+        }
+        .change_wrong{
+            background-image: url(../素材/错误.png);
+            color: red;
+        }
+        .change_right{
+            color: aquamarine;
+            background-image: url(../素材/对钩.png);
+            color: green;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="d1">
+            设置密码 : <input type="password" class="i1">
+            <!-- <img src="../素材/感叹号0.png" alt="" class="img1"> -->
+            <p class="p1">&nbsp&nbsp&nbsp &nbsp请输入6~16位密码</p>
+    </div>
+<script>
+    var inpt =document.getElementsByClassName('i1');
+    var p1 =document.getElementsByClassName('p1');
+
+    inpt[0].onblur =function(){
+        if(this.value.length>=6 && this.value.length<=16){
+            p1[0].className='p1 change_right';
+            p1[0].innerHTML="&nbsp&nbsp&nbsp &nbsp 恭喜您输入成功"
+            
+        }
+        else {
+            p1[0].className='p1 change_wrong';
+            p1[0].innerHTML="&nbsp&nbsp&nbsp &nbsp抱歉您的输入不符合标准"
+        }
+    }
+
+</script>
+
+</body>
+</html>
+
+<script>
+    /*
+    innerHTML 获取标签内部的文字
+
+     未解决：
+             事件类型发动后 后面的 p 换行  
+             但是 事件类型为发生前的类属性中已经存在行内块的设置 但是发生后却换行
+    
+    
+    
+    */
+</script>

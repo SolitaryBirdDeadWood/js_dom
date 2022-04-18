@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .tab{
+            background-color: blue;
+            width: 978px;
+            margin: 100px auto;
+        }
+        .tab_list{
+            background-color: aqua;
+            border: 1px solid green;
+/*  不会    */       height: 39px; /* 不添加则导致 所填的内容接在想法后面  高度不匹配*/
+
+            
+        }
+        .tab_con{
+            background-color: bisque;
+        }
+        .tab_list li{
+            list-style-type: none;
+             float: left; 
+             text-align: center;
+             height: 39px;
+             line-height: 39px;
+             padding: 0 20px;
+             
+        }
+        .item{
+            background-color: rgb(219, 228, 219);
+            color: rgb(206, 114, 27);
+            display: none;
+        }
+        .change{
+            background-color: brown;
+            color: wheat;
+            font-size: 10px;
+        }
+        .add{
+            display: block;
+        }
+        .tab_list .current {
+            background-color: #c81623;
+            color: #fff;
+        }
+
+    </style>
+
+   
+</head>
+<body>
+   <div class="tab">
+        <div class="tab_list">
+            <ul>
+                <li class="current">性别</li>
+                <li>姓名</li>
+                <li>行为</li>
+                <li>事件</li>
+                <li>想法</li>
+            </ul>
+        </div>
+        <div class="tab_con">
+ 
+            <div class="item" style="display: block;">女</div>
+            <div class="item">王晨晨</div>
+            <div class="item">减肥减肥</div>
+            <div class="item">和舍友撕逼</div>
+            <div class="item">妄想瘦10斤 成为富婆 天天换小鲜肉</div>
+        </div>
+    </div> 
+
+    <script>
+        var item =document.getElementsByClassName('item');
+        var  lis = document.getElementsByTagName('li');
+        for(let t =0;t<lis.length;t++){
+ /*添加索引号*/lis[t].setAttribute('index',t);
+              lis[t].onclick=function(){
+
+ /*排他思想 先对li格式清空*/
+                for(var i=0;i<lis.length;i++){
+                    lis[i].className='';
+                }
+ /*然后添加li的点击样式*/
+                lis[t].className='change';
+
+                //   console.log(index);
+                for(var i =0; i<item.length;i++){
+                    /*对内容进行隐藏*/   item[i].style.display='none';
+                }
+     /* 获取索引 */   var index =this.getAttribute('index');
+/*通过点击的索引使显现*/item[index].style.display='block';
+
+            }
+        }
+
+    </script>
+
+
+</body>
+</html>
+<script>
+/*
+思路：
+    主要使用排他思想和索引
+    用排他思想 清楚样式和添加样式
+    用索引在 格式清楚后对内容添加
+
+  头部：
+     使用for1 对所有的li添加事件并建立索引 为最后添加索引的内容做铺垫
+     使用 for2 清除 li的所有格式  并在清除完成后添加事件类型
+
+  内容：
+      使用for  排他 对所有内容进行隐藏  使用建立的索引修改要呈现的内容
+
+        
+
+
+*/
+
+
+    /*
+    对li的高度进行设置
+    
+    
+    
+    */
+</script>

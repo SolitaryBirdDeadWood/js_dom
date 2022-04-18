@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      table{
+          width: 500px;
+          text-align: center;
+         /* position: relative;*/
+      }
+    /*   th input{
+         position: absolute;
+          top: 5px;
+          left: 3px;
+         
+      } */
+        thead{
+            background-color: rgb(58, 58, 169);
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+         <tr>
+             <th>
+                 <input type="checkbox" class ="a1">
+             </th>
+             <th>人物</th>
+             <th>行为</th>
+         </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td><input type="checkbox" class="a1"></td>
+                <td>戴新瑞</td>
+                <td>躺平</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class ="a1"></td>
+                <td>王晨晨</td>
+                <td>内卷</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class ="a1"></td>
+                <td>黄脸婆</td>
+                <td>夜不归宿</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class ="a1"></td>
+                <td>背锅侠</td>
+                <td>夜不归宿</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script>
+        var thead=document.querySelector('thead').getElementsByClassName('a1');
+        var checkbox =document.querySelector('tbody').getElementsByClassName('a1');
+        thead[0].onclick =function(){
+         for(let i = 0;i<checkbox.length;i++){
+                checkbox[i].checked=this.checked;  //
+            }
+        }
+
+        for(let i =0;i<checkbox.length;i++){        //外层循环 开始进行对每个进行选择
+            checkbox[i].onclick=function(){
+                var flag =true;                     //开始设置判断，当结果为true 总选为true
+              for(let k=0;k<checkbox.length;k++){   //内层循环 对每一次选择后 对全部的 复选框检查有没有选择
+                    if(!checkbox[k].checked){       // 刚开始的网页复选框没有勾选默认为false ，当点击后为true  flag赋值为false 失败  保持true  
+                       flag =false;
+                       break; //只要有一个没有选中 结束循环
+                    }
+                }
+                thead[0].checked=flag;
+            }
+        }
+
+
+
+
+
+
+
+
+
+   /* var floot =false;
+      for( let i =0;i<checkbox.length;i++){
+          checkbox[i].onclick=function(){
+          if(checkbox[i].checked=='checked'){
+              floot =true;
+          }
+      }
+      if(floot===true){
+        thead[0].checked='checked';
+    }
+      }
+    
+*/
+
+    /*  for(let j =0;j<checkbox.length;j++){
+            if(checkbox[j].checked=='checked'){
+                thead[0].checked='checked';
+            }
+            else{
+                thead[0].checked='';
+            }
+        }*/
+    </script>
+
+
+  
+    
+</body>
+</html>
+<script>
+    /*
+    在复选框里面 checked='checked' 表示复选框已经被选中
+    */
+
+//问：
+   /* checkbox[i].checked=this.checked;  等于号后面所填的不应该是字符串
+    document.body.style.backgroundImage = 'url(' + this.src + ')'; /*  'url(${img[i].src})'
+    */
+   
+</script>

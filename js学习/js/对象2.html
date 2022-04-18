@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        
+        
+        //构造函数
+        function Ga(a ,b,c){
+            this.name=a;
+            this.age=b;
+            this.sex=c;
+            this.action=function(){
+                console.log('你扫');
+            }
+        }
+        //对象
+        var ww = new Ga('蒋勋',48,'男');
+        console.log(ww.name);
+        ww.action();
+        for( var k in ww){
+            console.log(k);  //遍历键
+            console.log(ww[k]); //遍历值
+            
+        }
+        var  ww1=[1,2,3];
+        for(let i of ww1){
+            console.log('---------------------------i-------------------');
+            console.log(i);
+        }
+        ww.action;
+        
+        
+        //封装
+        var myMax ={
+              PI:3.14,
+              max:function(){
+                  var max = arguments[0];
+                  for(var i =1;i<arguments.length;i++){
+                      if(arguments[i]>max){
+                          max=arguments[i];
+                      }
+                  }
+                  return max;
+              },
+              min:function(){
+                  var min = arguments[0];
+                  for(var i =1;i<arguments.length;i++){
+                      if(min>arguments[i]){
+                          min=arguments[i];
+                      }
+                  }
+                  return min;
+              }
+        
+        }
+        
+        console.log(myMax.max(9,8,7,2,51));
+        
+        
+        
+        
+        
+        
+        
+        
+        function getRandom(min,max) {
+            return Math.floor(Math.random()*(max-min+1))+min;
+            
+        }
+        console.log(getRandom(10,30));
+        console.log(Math.trunc((Math.random()*20)+10));
+        //Math.trunc()  转换成为整数；
+        var subject=['数学','英语','体育','政治','商务']
+        console.log(subject[getRandom(0,4)]);
+        
+        
+        
+        //    Math.random()*(n-m)+m ；随机m到n之间包括n和m的数；
+        //   (Math.random()*(max -min))+min   返回[min,max);
+        //    (Math.random()*(max -min+1))+min   返回[min,max];
+        
+        
+        
+        function randoms(min,max){
+            return Math.floor(Math.random()*(max-min+1))+min;
+        }
+        var a1=randoms(10,300);
+         for(var i=0;;i++){
+            var num=prompt('请猜一猜10~300之间的数');
+         if(num>a1){
+             alert('大了');
+         }else if(num<a1){
+             alert('小了');
+         }else{
+             alert('真好');
+             break;
+         }
+         }
+        
+     /*   var flot = true;
+        while(flot){
+           var num=prompt('请猜一猜10~300之间的数');
+           if(num>a1){
+             alert('大了');
+           }else if(num<a1){
+             alert('小了');
+           }else{
+             alert('真好');
+             flot=false;
+            }
+        }
+    */
+        
+        
+        
+        
+        
+        
+        
+        
+        // let obj =Object.create(null);
+        // let obj ={};
+        // 如果需要对象的继承属性和方法，那就使用 let obj = {};
+        // 如果只需要一个纯净的对象，那就使用 Object.create(null)
+        // 比如说，我只需要用对象来保存一些数据，然后进行循环取用，提高循环效率。
+        // 这个时候如果对象有原型链，那便会在循环的时候去循环它的各个属性和方法
+        // 然而这不是必要的，我们只是要他里面的元素而已，前者会影响循环效率
+
+
+
+        </script>
+        
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div id="a1"></div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <ol id="a2">
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+    </ol>
+    <div class="a3">1212</div>
+    
+</body>
+</html>
+<script>
+   //1  获取id
+   var s1= document.getElementById('a1');
+   console.log(s1);
+   console.log(typeof s1);
+   console.dir(s1);
+
+   //2获取标签
+        var s2= document.getElementsByTagName('li');
+        console.log(s2);
+        console.log(s2[1]);
+
+         var s3= document.getElementById('a2');
+         console.log(s3.getElementsByTagName('li'));
+
+        var s4 =document.getElementsByTagName('ol'); //也可以通过获取标签返回的集合，使用集合的第一个
+        console.log(s4[0].getElementsByTagName('li'));
+
+    //3 通过类名获取标签
+        var s5= document.getElementsByClassName('a3');
+        console.log(s5);
+
+        
+    //
+
+
+
+
+</script>
+
+<script>
+//获取id
+    //A： document.getElementById(id)
+             //1.因为加载方式为从上往下 document.getElementById(s) 必须要写到获取元素的下面
+             //2. s为一个字符串
+             //3.返回一个 对象
+    //B：通过标签名获得id
+            //1.返回一个对象的 集合（伪数组）
+            //2.若该标签不存在返回空集合
+          //  document.getElementsByTagName(m)指的是获取全页(document)中的某个标签
+          //   单个父元素.getElementsByTagName(m)  指的是从父元素中获取某个子元素
+    //C：通过类名获取标签
+            //document.getElementsByClassName('类名');
+            // 返回一个集合
+    //D：document.getElementsByName('name')
+
+   //  getElementById(id) 返回对象
+   //  getElementByTagName('标签名') 返回集合
+   //  getElementByClassName(m) 返回集合
+
+</script>
+<script>
+//   console.dir(s); 打印返回的对象 更号的查看里面的属性和方法 返回值是一个类数组
+
+</script>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .f{
+            width: 400px;
+            height: 400px;
+            background-color: aqua;
+        }
+        .s{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="f">
+        <div class="s">
+
+        </div>
+    </div>
+
+    <ul>
+        <li>世上如农有几人</li>
+        <li>世上如农有几人</li>
+        <li>世上如农有几人</li>
+        <li>世上如农有几人</li>
+    </ul>
+    
+    <script>
+        var f =document.getElementsByClassName('f');
+        var s =document.getElementsByClassName('s');
+
+        s[0].addEventListener('click',function(e){ 
+            alert('son');
+            e.stopPropagation(); //冒泡阻止事件
+        },false);
+      
+         f[0].addEventListener('click',function(){
+            alert('f');
+        },false);
+
+
+
+       
+    </script>
+
+    <script>
+        var ul =document.getElementsByTagName('ul');
+        var li=document.getElementsByTagName('li');
+
+        ul[0].addEventListener('click',function(e){
+            e.target.style.backgroundColor='red';
+            //e.target   获取到触发事件的元素
+        });
+    </script>
+    <script>
+        document.addEventListener('contextmenu',function(e){
+            e.preventDefault(); //禁止鼠标右键
+        })
+        document.addEventListener('selectstart',function(e){
+            e.preventDefault(); //禁止鼠标右键
+        })
+    </script>
+</body>
+</html>

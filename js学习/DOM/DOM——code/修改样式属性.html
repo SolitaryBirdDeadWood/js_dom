@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div{
+            background-color: blueviolet;
+            width: 200px;
+            height: 100px;
+        }
+        .change{
+            background-color: brown;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+  
+    <div class="div">111
+    </div>
+
+    <script>
+        var div1 =document.getElementsByClassName('div');
+      div1[0].onclick=function(){
+           this.className='change';
+   
+
+
+           /* div1[0].style.backgroundColor='red';
+            this.style.width='20px'*/
+        }
+
+
+    </script>
+    
+</body>
+</html>
+<script>
+    /*
+    1.使用行内样式来修改
+        element。style.属性=''；                                                                
+
+    2.使用类名样式操作  .className  
+
+         在<style></style> 中 定义一个 使用类来添加属性  .change{}
+             在使用函数的事件类型  对该标签直接添加类名
+            相当于直接 对原类名进行改变 使用所准备的类名
+            直接添加所准备的类名中的属性
+        className 会直接更改元素的类名，覆盖原来的类名
+        
+        如若要保存原先的类名  
+        this.clsaName='旧类名+空格+新类名'
+
+    */
+</script>

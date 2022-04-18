@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+ 
+ var a1 =['a','b','c'];
+    console.log(a1.length);
+    console.log(a1[0]);
+    
+    var arry0=new Array(8); //一个数：创建一个长度为8的空数组
+    var arry0=new Array(8,2) //等价于[8,2]
+    console.log(a1 instanceof Array);
+    console.log(Array.isArray(a1));
+    //结果为布尔类型 检测是否为数组
+     //可以使用if() 进行限定判断是否为数组
+    
+    
+    //添加元素
+    a1[3]='d' ;
+    
+    // a1.push(4,'ni')  在数组末尾添加
+    console.log(a1.push(4,'ni'));//执行添加后 返回 新数组的长度  为7
+    
+    //a1.unshift() 在数组的开头添加
+    console.log(a1.unshift(6,'ui'))//同样添加后 返回新数组的长度
+    
+    //删除数组元素
+    // a1.pop() 删除数组的最后一个元素
+    console.log(a1.pop()); //输出删除的元素
+    
+    //a1.shift 删除数组的第一个元素
+    
+    //将数字数组转换成字符串数组
+     for(var i=0;i<a1.length;i++){
+         a1[i]=a1[i]+'';
+     }
+    
+     console.log(a1);
+    
+    
+    //挑选数组中大于x的数
+    
+        var arry=[];
+        for(var i=0;i<5;i++){
+            arry[i]= prompt('请输入个数') 
+        }
+    function select(arry){
+        var newArry=[];
+        for(var k=0;k<arry.length;k++){
+            if(arry[k]>0){
+             //   newArry[newArry.length]=arry[k];// newArry 原来为空的 长度为0  正好对应第一个 添加一个元素后正好下标对应的为第二个
+                newArry.push(arry[k]); //把 arry[k]添加到新数组的最后一个
+            }
+        }
+        return newArry
+    }
+     console.log(select(arry));
+    
+     //翻转数组
+     function reversal(arry){
+         var arry2=[];
+         for(var m=arry.length-1;m>=0;m--){
+             arry2[arry2.length]=arry[m];
+         }
+         return arry2;
+     }
+     console.log(reversal(arry));
+    
+       //数组排序
+       /*  // 1.冒泡排序
+                // 两层循环 
+                //  第一层控制趟数
+                //  第二层控制每一趟交换四次
+                
+                //  五个数 共交换四次
+                //  第一堂4次
+                //  第二趟3次
+                //  第三趟2次
+                //  第二趟1次
+                function sort(arr){
+                    for(var i =0; i < arr.length-1;i++){
+                        for(j =0;j < arr.length-1-i;j++){//趟数-i =趟次  趟次随趟数减少   递减
+                           if(arr[i]>arr[i+1]){
+                               var temp = arr[i];
+                               arr[i]=arr[i+1];
+                               arr[i+1]=temp;
+                           }
+                        }
+                    }
+                    return arr ;
+                }
+              var arr2 =[1,4,8,6,58]
+                console.log(sort(arr2));
+             */
+         //冒泡排序第二种   
+         var q2=[0,9,8,7,6];
+         var q3=[4,2,15,64,26,14,634];
+            console.log(q2.sort());//sort 仅仅适用于1个位数
+            q3.sort(function(a,b){
+                return a-b;//升序
+                //return b-a 降序
+            })
+            console.log(q3);
+    
+         //2. 反转
+         var q1=new Array(5,4,3,2,1,12,49,51);
+         console.log(q1.reverse());
+    
+
+         //数组索引
+         var s1=['n','m','n','n'];
+         // console.log(s1.sort());
+         console.log(s1.indexOf('n'));//从前往后查找 返回数组的下标，若有重复则返回第一个  若无则为-1
+         console.log(s1.lastIndexOf('n'));//从后往前查找     
+         //二者区别仅仅在于有无重复元素出现时 对应的结果
+        
+        
+       
+        
+        
+        </script>
+    </head>
+    <body> 
+    </body>
+    </html>

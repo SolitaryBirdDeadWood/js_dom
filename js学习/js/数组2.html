@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //把就旧数组中的元素放进新数组且不能重复
+     var z1=['c','a','z','a','x','a','x','c','b'];
+   function sws(arry) {
+       var newz1= [];
+       for(var i =0;i<arry.length;i++){
+        if(newz1.indexOf(arry[i])==-1){
+             newz1.push(arry[i]);
+        }
+       }
+  return newz1;
+   }
+   console.log(sws(z1));
+   console.log(z1);
+
+   //把旧数组中的元素放进新数组且不重复 并且删去旧数组中的重复元素
+ var z2=['c','m','z','a','m','a','c','a','m','q','q']
+function sys(arry){
+    var newz2=[];
+    for(var i =0;i<arry.length;i++){
+        for(var k=1;k<arry.length;k++){
+           if(arry[i]==arry[k]){
+               arry.splice(k,1);//删除 从k开始 的1个元素
+           }
+       }
+       if(newz2.indexOf(arry[i]==-1)){
+          newz2.push(arry[i])
+        }
+
+    }
+    return newz2;
+}
+console.log(sys(z2));
+console.log(z2);
+
+var x1=[1,2,3,4];
+
+console.log(x1.toString());
+console.log(x1.join('$'));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

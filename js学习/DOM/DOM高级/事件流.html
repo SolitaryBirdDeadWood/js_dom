@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .f{
+            width: 400px;
+            height: 400px;
+            background-color: aqua;
+        }
+        .s{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="f">
+        <div class="s">
+
+        </div>
+    </div>
+    
+    <script>
+        var f =document.getElementsByClassName('f');
+        var s =document.getElementsByClassName('s');
+
+        s[0].addEventListener('click',function(){ 
+            alert('son');
+        },true);
+         //注册事件的第三个参数为true 则处于捕获阶段
+         // document ---》 html----》body------》father-----》son
+         //但是由于前面几个没有监听器所以只执行son
+
+         f[0].addEventListener('click',function(){
+            alert('f');
+        },true);
+        //此时点击son  则会出现 f 和 s 的效果    点击f 出现f 的效果
+
+
+
+        //如果注册事件的第三个参数为false或者省略则为冒泡阶段
+        // son---》father-----》body------》html
+    </script>
+</body>
+</html>

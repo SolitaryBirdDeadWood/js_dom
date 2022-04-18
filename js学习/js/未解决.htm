@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // arguments 函数
+
+
+        
+           //统计出现最多的字符和次数
+           var str='abcoefoxyozzopp';
+     var o={};
+    for(var i=0;i<str.length;i++){
+        var chars=str.charAt(i);
+        if(o[chars]){
+            o[chars]++;
+        }else{
+            o[chars]=1;
+        }
+    }
+    console.log(o);
+    var max =0;
+    var ch='';
+    for(var k in o){
+        //k 得到是属性名
+        //o[k]得到属性值
+        if(0[k]>max){
+            max=o[k];
+            ch=k;
+        }
+    } 
+console.log(max);
+console.log(ch);
+console.log('答案是o 和 4 上面写的有缺陷');
+
+
+//将 sew1.indexOf('a')  赋值 放在while 不成
+var sew1 = 'aaabbbaayasdasdxzvdsgbfdnbrtuytreg';
+       console.log(sew.replace('n','ww'));
+      while( sew1.indexOf('a')!==-1){
+        sew1 =sew1.replace('a','+');
+      }
+       console.log(sew1);
+
+       var arr1 = [10,1,5,2,3];
+    arr1.sort(function(a, b) {
+        return a - b;
+    });
+    console.log(arr1);      
+       
+
+
+
+ //altet tbable stu_information add stu_id int(100) not null auto_increment; 出错  
+//this.name  和 obj。name  
+
+/*
+
+create table Student_Information(
+Sno int not null auto_increment primary key,
+Sname varchar(10) not null,
+Sex char(1) not null,
+Sage tinyint(100) not null,
+Sdept char(4) not null)comment = '学生表';);
+
+
+
+*/
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

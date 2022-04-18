@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="inner"></div>
+    <div class="create"></div>
+
+
+    <script>
+        //使用 innheHTML和appChild 添加元素
+        var inner = document.getElementsByClassName('inner');
+        var create =document.getElementsByClassName("create");
+    //两种创建方式：
+    
+         //1. 
+        var a =document.createElement('a');
+        inner[0].innerHTML='<a href ="3">百度</a>';
+        //2.
+        create.appendChild('a');
+
+
+
+    //使用innerHTML 与数组结合创建多个节点的效率更高
+
+        function fn() {
+        var d1 = +new Date();  //记录开始的时间
+        var array = [];
+        for (var i = 0; i < 1000; i++) {
+            array.push('<div style="width:100px; height:2px; border:1px solid blue;"></div>');
+        }
+        document.body.innerHTML = array.join('');//数组转化成字符串
+        var d2 = +new Date();   //记录结束时间
+        console.log(d2 - d1);   //输出执行的时间
+    }
+    fn();
+    </script>
+</body>
+</html>

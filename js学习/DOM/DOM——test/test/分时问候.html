@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 200px;
+            height: 140px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="a1">
+    <img src="../素材/0158a15e4d245da8012165184e0709.jpg@1280w_1l_2o_100sh.jpg" alt="">
+    <br>
+    <p>上午好</p>
+</div>
+
+
+
+
+
+<script>
+  var img =document.getElementsByTagName('img');
+  var p =document.getElementsByTagName('p');
+
+
+    
+     var time =new Date();
+     var hours=time.getHours();
+     if(hours>8&&hours<13){
+         img[0].src='../素材/狮子.jpg';
+         p[0].innerText='上午好,送你一只狮子';
+     }
+     else if(hours>=13){
+         img[0].src='../素材/wallhaven-od3z6m.jpg';
+         p[0].innerText='下午好,送你一头熊';
+     }
+     else if(hours>19){
+         img[0].src='../素材/src=http___b-ssl.duitang.com_uploads_item_201901_25_20190125145449_kjLFj.jpeg&refer=http___b-ssl.duitang.jpg';
+         p[0].innerText='晚上好';
+     }
+     else if(hours>6&&hours<=8){
+         img[0].src='../素材/51dcd93c-a98e-4635-aa5d-74193c6f1f26.jpg';
+         p[0].innerText='早上好,雨水图';
+     }
+     console.log(hours);
+
+     
+
+     
+    
+
+
+
+
+   </script>
+</body>
+</html>

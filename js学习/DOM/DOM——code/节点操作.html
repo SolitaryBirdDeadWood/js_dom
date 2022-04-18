@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <ul>
+        <li>123</li>
+    </ul>
+    <script>
+        var li =document.createElement('li');
+        var fu=document.getElementsByTagName('ul');
+        fu[0].appendChild(li);
+
+        var li_c =document.createElement('li');
+        fu[0].insertBefore(li_c,fu[0].children[0]); //在123前面插入一个li
+
+    </script>
+
+</body>
+</html>
+<script>
+/*
+创造添加节点：（一开始的文章评论是空的，发表一个评论 相当于创建增加一个节点）
+    document.createElement(创建的元素);
+    父.appendChild(要添加的标签);    添加到末尾
+    父.insertBefore(创建的元素，指定子元素); 添加到指定子元素的前面
+ 
+
+
+删除节点
+  node.removeChild(child);     node表示节点       删除父类中的子节点
+  node.removeChild(m.paresentNode);            删除父类中m的兄弟节点
+
+
+克隆节点
+   ul.child[0].cloneNode();   仅仅是克隆 并未添加现实 不复制里面的内容  id也会克隆进去
+   ul.child[0].cloneNode(true); 复制标签里面的内容
+
+
+
+
+*/
+</script>

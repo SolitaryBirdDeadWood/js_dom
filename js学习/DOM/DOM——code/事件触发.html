@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <button class="a1" >你好</button>
+    <button id="a2">不好</button>
+    <div id="ss">王晨晨减肥失败</div>
+    <div class="ssa">王晨晨减肥会失败吗?</div>
+
+    <button class="button">看看是什么</button>
+    <div id="div" style="background-color: aquamarine;">********</div>
+
+    <button class="button1">点击查看系统时间</button>
+    <div id="div1" style="background-color: rgb(127, 138, 255);">********</div>
+    <div id="div2" style="background-color:red ;">  王晨晨 普信女 真下头</div>
+    <p></p>
+
+<div style="background-color: brown;">----------------------------------分割线----------------------------------------------------</div>
+    <p></p>
+
+    <button class="q1">熊</button>
+    <button class="q2">狮子</button>
+    <br>
+    <img src="../素材/4487ef73-97d5-4218-884d-042aed26df71.jpg" title="熊"
+    style="width: 100px;height:50px;">
+
+
+
+
+     
+</body>
+
+<script>
+
+    var s1 =document.getElementsByClassName('a1');  //返回集合
+    var s2 =document.getElementById('a2'); 
+    var s3=document.getElementById('ss');
+    var s4 =document.getElementsByClassName('ssa');
+   
+    var a1 =document.getElementsByClassName('button');
+    var a2=document.getElementById('div');
+    var a11 =document.getElementsByClassName('button1');
+    var a21=document.getElementById('div1');
+    var a3 =document.querySelector('#div2');
+
+             //返回对象
+
+    s1[0].onclick=function(){
+        alert('你好啊') ;
+    }
+   s2.onclick=function(){
+        alert('你好~~~~~')
+    }
+    s3.onclick=function(){
+        alert('一定失败')
+        s3.innerText='王晨晨减肥100%失败'
+    }
+    s4[0].onclick=function(){
+        alert('一定一定一定')
+    }
+
+    a2.onmouseover=function(){
+        a2.innerText='2021.3.3王晨晨今天早上懒虫了'
+    }
+    a2.onmouseout=function(){
+        a2.innerText='***********'
+    }
+
+
+    a11[0].onclick=function(){
+        a21.innerText=getTime();
+    }
+
+ a3.innerText=getTime(); //不添加事件类型直接将来内容替换 
+    //若不添加事件类型直接覆盖原来内容 显示所操作的
+
+    
+    function getTime(){
+        var date =new Date();
+        var year = date.getFullYear();//获取完整年份
+        var month=date.getMonth()+1; //返回0--11   加1后  为  1--12
+         var date1=date.getDate();
+        var hours=date.getHours();
+        var second=date.getSeconds();
+        console.log(hours);
+        console.log(second);
+    
+        var nowTime=year+':'+month+':'+date1
+         +':'+hours+':'+second;
+        return nowTime;
+    }
+</script>
+
+<script>
+var q1_ =document.getElementsByClassName('q1');
+var q2_=document.getElementsByClassName('q2');
+var img_ =document.getElementsByTagName('img');
+
+q1_[0].onclick=function(){
+    img_[0].src="../素材/4487ef73-97d5-4218-884d-042aed26df71.jpg"
+    img_[0].title="熊";
+}
+q2_[0].onclick=function(){
+    img_[0].src="../素材/狮子.jpg";
+    img_[0].title="狮子";
+}
+
+
+
+
+</script>
+</html>
+
+
+<script>
+//事件触发
+     //分类
+          //1.事件源:    被触发的对象
+          //2.事件类型 ： 如何被触发  如：鼠标点击(onclick) 滑动滚轮 键盘输入
+          //3.事件处理程序：通过什么触发   如：通过一个函数赋值的方式完成
+     //格式：
+        //事件源.事件类型=函数；  如果获取的返回为数组需要具体指定
+        //如： s1.onclick=function(){}
+
+   
+
+    /*
+    事件类型
+    onclick 鼠标点击
+    onmouseover 鼠标经过
+    onmouseout  鼠标离开
+
+
+    innerText 修改元素内容  =后面不识别html标签
+    innerHTML  = 后面 识别HTML标签 并且起到和 innerText同样效果
+
+    这俩个属性都是可读取的 
+    innerText读取的内容为该标签里面所以txt 去掉空格和换行的纯文本
+    innerHTML读取的内容为 该标签里面的所有内容 标签以文本形式显示 空格和换行保留
+    
+    */
+
+    
+    //若不添加事件类型
+        //直接覆盖原来内容 显示所操作的
+
+
+
+
+</script>
+
+
+<script>
+//修改
+   /*
+   1.图片路径
+   得到命名属性后
+   属性.src=
+   属性.title=
+   
+   
+   
+   
+   
+   */
+
+</script>
+
+

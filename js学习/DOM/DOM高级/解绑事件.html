@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="s1" style="background-color: aqua;"> 11</div>
+    <div class="s2" style="background-color: rgba(165, 182, 182, 0.654);"> 11</div>
+    <div class="s3" style="background-color: rgba(11, 49, 49, 0.477);"> 11</div>
+    
+
+    <script>
+        var s =document.getElementsByTagName('div');
+//传统解绑事件
+        s[0].onclick=function(){
+            alert(11);
+            this.onclick=null;  //解绑
+        }
+// 解绑事件
+     //1.
+        function fn(){
+            alert('你好啊');
+            s[1].removeEventListener('click',fn);// 第一个为事件 第二个为删除的函数
+        }
+        s[1].addEventListener('click',fn)
+        
+    //2.
+    function fn1(){
+        alert('我不好');
+        s[2].detachEvent('onclick',fn1);
+    }
+    s[2].attachEvent('onclick',fn1);
+       
+    </script>
+</body>
+</html>
