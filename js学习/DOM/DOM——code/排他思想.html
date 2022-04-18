@@ -19,23 +19,32 @@
     <script>
         var but =document.getElementsByTagName('button');
         for(let i =0;i<but.length;i++){
+            var flag =false;
             console.log('第一层for');
             but[i].onclick=function(){
                
-                for(let u =0;u<but.length;u++){
-                    but[i].style.backgroundColor='';
-                    console.log('先去除颜色，第二层for');    
-                  //  console.log('u的值为：'+u);
-                   // console.log('i的值为：'+i);
-                //如果内层循环里面有参数 则循环多次,无参数则循环一次
-                } //内层循环完成
+                // for(let u =0;u<but.length;u++){
+                //     console.log('先去除颜色，第二层for'+u);    
+                //     but[i].style.backgroundColor='';
+                //   //  console.log('u的值为：'+u);
+                //    // console.log('i的值为：'+i);
+                // //如果内层循环里面有参数 则循环多次,无参数则循环一次
+                // } //内层循环完成
 
                 console.log('改变颜色');
                 this.style.backgroundColor='red';
                 var text= but[i].innerHTML;
                 console.log(text);
+                flag =true;
+                 
+                if(flag=true){
+                    but[i].onclick=function(){
+                    but[i].style.backgroundColor='green';
+                }
+            }
             }
         }
+  
 
 
         //第一层for 通过点击改变样式
