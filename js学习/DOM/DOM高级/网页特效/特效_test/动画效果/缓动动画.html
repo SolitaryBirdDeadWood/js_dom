@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a1{
+            background-color: bisque;
+            width: 90px;
+            height: 400px;
+            position: absolute;
+        }
+        
+    </style>
+</head>
+<body>
+    <button >点击我开始移动</button>
+    <div class="a1"></div>
+    <script>
+        var div=document.getElementsByTagName('div');
+        var button=document.getElementsByTagName('button');
+        function time(obj,target,b){
+            
+            clearInterval(obj.time);
+            obj.time=setInterval(function(){
+                if(obj.offsetLeft >target-10){
+                    obj.style.left=0;
+                }
+                var step =(target-obj.offsetLeft)/b; //得到每次减缓的距离
+            console.log(step);
+            obj.style.left=obj.offsetLeft+step+'px';
+        },15);
+    }
+        button[0].addEventListener('click',function(){
+         time(div[0],900,10);
+        })
+    </script>
+    
+</body>
+</html>
+<script>
+    /*
+    使动画的速度可变
+
+    使盒子每次移动的距离慢慢变小 速度变小
+    （目标值-现在）/10
+    
+    */
+</script>
+

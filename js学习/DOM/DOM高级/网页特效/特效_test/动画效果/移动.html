@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a1 {
+            background-color: bisque;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            /*
+            移动的元素一定要加定位*/
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击来回移动</button>
+    <div class="a1">
+    </div>
+    
+    <script>
+        /*
+        var div=document.getElementsByTagName('div');
+        var time =  setInterval(function(){
+        if(   div[0].offsetLeft>400){
+            clearInterval(time);
+        }
+        div[0].style.left=  div[0].offsetLeft+10+'px';
+        },30);
+        */
+
+        //封装    (对象，位置)
+        /*  function the_first(obj,target){
+              var time =  setInterval(function(){
+          if( obj.offsetLeft>=target){
+              clearInterval(time);
+          }
+          obj.style.left=  obj.offsetLeft+10+'px';
+          },30);
+          }*/
+
+        //封装改进
+     /*   function the_first(obj, target) {
+            //使用var 需要开辟内存空间 而且多个元素的定时器名称一样
+            //将定时器作为该对象的一个属性
+            obj.time = setInterval(function () {
+                if (obj.offsetLeft >= target) {
+                    clearInterval(obj.time);
+                }
+                obj.style.left = obj.offsetLeft + 10 + 'px';
+            }, 30);
+
+        }*/
+    //来回走动
+    /*    function the_first(obj, target) {
+            obj.time = setInterval(function () {
+                if (obj.offsetLeft > target-1) {
+                    obj.style.left=-20+'px'
+                }
+                obj.style.left = obj.offsetLeft + 10 + 'px';
+            }, 50);
+
+        }
+        var div = document.getElementsByTagName('div');
+        var button=document.getElementsByTagName('button');
+
+        //调用
+      //  the_first(div[0], 400);
+       button[0].addEventListener('click',function(){
+        the_first(div[0],400);
+       });*/ //如果多次点击则会多加一个定时器 在执行的速度上加倍
+       
+       
+    //解决多次按后加速
+    function the_first(obj, target) {
+        //在每次执行则 清楚定时器
+        clearInterval(obj.time);
+
+            obj.time = setInterval(function () {
+                if (obj.offsetLeft > target-1) {
+                    obj.style.left=0+'px'
+                }
+                obj.style.left = obj.offsetLeft + 10 + 'px';
+            }, 20);
+
+        }
+        var div = document.getElementsByTagName('div');
+        var button=document.getElementsByTagName('button');
+
+       button[0].addEventListener('click',function(){
+        the_first(div[0],400);
+       });
+    </script>
+
+</body>
+
+</html>
+<script>
+    /*
+    给元素加定位
+    获得当前位置
+    使用定时器移动
+    结束定时器
+    
+    */
+</script>

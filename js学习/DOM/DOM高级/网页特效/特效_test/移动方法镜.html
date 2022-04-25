@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+        }
+     
+        .a1{
+            position: relative;
+            width: 400px;
+            height: 500px;
+            background-image: url(https://exp.xiaogd.net/topic/network/what-is-a-port/xiaogd-net-443-port.png);
+        }
+        .a2{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            left: 0;
+            top: 0;
+            background-color: antiquewhite;
+            opacity: .5;
+            cursor: move;
+        }.a3{
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            left: 400px;
+            top: 0;
+            z-index: 999;
+        }
+        img{
+            position: absolute;
+        }
+        .v4{
+            background-color: rgb(22, 21, 46);
+            width: 600px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="a1">
+        <div class="a2">遮挡层</div>
+        <div class="a3">显示层
+            <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.2qqtouxiang.com%2Fpic%2FTX9745_05.jpg&refer=http%3A%2F%2Fimg.2qqtouxiang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1653293767&t=ff461f82a3a1eeb3806fc00d2ad98c3e" alt="">
+        </div>
+    </div>
+    <div class="v4"></div>
+
+    <script>
+        var div =document.getElementsByTagName('div');
+        var img =document.getElementsByTagName('img');
+        
+        div[0].addEventListener('mouseover',function()
+        {
+            //鼠标经过显示
+            div[1].style.display= 'block';
+            div[2].style.display= 'block'
+        })
+        
+        div[0].addEventListener('mouseout',function(){
+            div[1].style.display= 'none';
+            div[2].style.display= 'none'
+        })
+        div[0].addEventListener('mousemove',function(e){
+            var x = e.pageX -div[1].offsetWidth/2-this.offsetLeft;
+            var y=e.pageY -div[1].offsetWidth/2 -this.offsetTop;
+           if(x<=0){
+               x=0;
+           }
+           //右边边框来限定   left 距离左边页面的长度为使用大盒子减去遮挡层
+           else if(x>=div[0].offsetWidth-div[1].offsetWidth){
+               x=div[0].offsetWidth-div[1].offsetWidth
+           }
+           if(y<=0){
+               y=0
+           }else if(y>=div[0].offsetHeight-div[1].offsetHeight){
+            y=div[0].offsetHeight-div[1].offsetHeight
+           }
+            div[1].style.left=x+'px'; //以边框为界  
+            div[1].style.top=y+'px';
+            /*
+            滑动遮挡层  显示层显示的是放大比例的图片 
+            遮挡层在图片上移动的比  和 大图片移动比例相同
+                遮挡层移动/遮挡层移动最大距离
+              = 大图片移动距离/大图片移动最大距离
+            */
+    
+           //遮挡层最大移动距离
+           var zMax=div[0].offsetWidth-div[1].offsetWidth;
+    
+           //大图片最大移动距离
+           var bigMax=img[0].offsetWidth-div[2].offsetWidth;
+    
+           //大图片移动距离
+           var xMax =x *bigMax/zMax;
+           var yMax =y*bigMax/zMax;
+           img[0].style.left=xMax+'px';
+           img[0].style.top=yMax+'px';
+
+        })    
+
+
+
+    </script>
+    
+</body>
+</html>

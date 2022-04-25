@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="">
+    <input type="button"   value="发送">
+    <input type="button" value="5s之后跳转页面">
+    <script>
+        var input =document.getElementsByTagName('input');
+        var count=10;
+        input[1].addEventListener('click',function(){
+            this.disabled=true;
+            
+           var time=setInterval(function(){
+                 var s1 ='还剩下'+count+'s';
+                 input[0].value='';
+
+                 console.log(s1);
+                input[1].value=s1;
+                count--;
+                if(count<0){
+                    clearInterval(time);
+                    input[1].disabled=false;
+                    input[1].value='发送'
+                }
+                 
+             },1000);
+        })
+        input[2].addEventListener('click',function(){
+            var t= setInterval(function(){
+                location.href='https://blog.csdn.net/qq_42534026/article/details/104537298?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522165069578516782092976714%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=165069578516782092976714&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-3-104537298.142^v9^pc_search_result_cache,157^v4^control&utm_term=api&spm=1018.2226.3001.4187'
+            },5*1000)
+        })
+   </script>
+</body>
+</html>
