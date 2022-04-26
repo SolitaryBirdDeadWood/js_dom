@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .sliderbar {
+        position: fixed;
+        right:0;
+        bottom: 100px;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        cursor: pointer;
+        color: rgb(179, 44, 44);
+    }
+    
+    .con {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 140px;
+        height: 40px;
+        background-color: purple;
+        z-index: -1;
+    }
+</style>
+<script src="animate.js"></script>
+</head>
+
+<body>
+<div class="sliderbar">
+    <span>←</span>
+    <div class="con">问题反馈</div>
+</div>
+
+  <script>
+    var body =document.getElementsByName('body')
+   var div=document.getElementsByTagName('div');
+    var span =document.getElementsByTagName('span');
+    function time(obj,target,b){
+        clearInterval(obj.time);
+        obj.time=setInterval(function(){
+            var step=(target-obj.offsetLeft)/b;
+            step= step>0? Math.ceil(step):Math.floor(step);
+        console.log(step);
+        if(obj.offsetLeft ==target){
+            clearInterval(obj.time);
+        }
+        obj.style.left=obj.offsetLeft+step+'px';
+    },30);
+}
+    var length =span[0].offsetLeft;
+    var po =div[1].offsetLeft;
+    span[0].addEventListener('mouseover',function(){
+        time(div[1],length-div[1].offsetWidth,10);
+    })
+    
+    span[0].addEventListener('mouseleave',function(){
+        time(div[1],po,10);
+    })
+</script>
+
+
+    
+</body>
+</html>
