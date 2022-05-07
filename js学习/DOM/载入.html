@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input  type="button" value="载入新文档" onclick="f1()"/>
+	<input  type="button" value="刷新文档" onclick="f2()"/>
+	<p id="p1"></p>
+    <script>
+        var input =document.getElementsByTagName('input');
+        input[0].onclick=function(){
+            window.location.assign("https://user.qzone.qq.com/1765834449/infocenter");
+            //跳转页面
+        }
+        input[1].onclick=function(){
+            //location.reload(true);
+         
+         //   history.go(1);
+            //返回到该页面的第一个访问的页面
+        }
+    </script>
+    
+</body>
+</html>

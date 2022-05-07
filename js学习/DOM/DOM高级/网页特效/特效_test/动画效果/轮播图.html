@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+
+        .wrap{
+            /*在开始设定图片 超出的都会隐藏*/
+            overflow: hidden;  /*内容被修剪，其余内容不可见*/
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 200px auto ;
+        }
+       .wrap .img-list{
+            display:flex;
+            position: relative;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: 0.5s ease;
+        }
+
+        .img-list img{
+            width: 100%;
+            cursor: pointer;
+        }
+        .wrap a{
+            /*小箭头的排版*/
+            position: absolute;
+            top:50%;
+            transform: translate(0,-50%);
+            display: block;
+            width: 40px;
+            height: 70px;
+            color: wheat;
+        }
+        
+    </style>
+</head>
+<body>
+            <div class="wrap">
+                
+                <!-- 图片 a里面方图片 -->
+                <div class="img-list">
+                    <ul>
+                    <li><a href=""><img src="../图组/OIP-C (1).jpg" alt=""></a></li>
+                    <li><a href=""><img src="../图组/OIP-C (2).jpg" alt=""></a></li>
+                    <li><a href=""><img src="../图组/OIP-C (3).jpg" alt=""></a></li>
+                    <li><a href=""><img src="../图组/OIP-C.jpg" alt=""></a></li>
+                    <li><a href=""><img src="../图组/OIP-C (5).jpg" alt=""></a></li>
+                </ul>
+                </div>
+
+                <div class="arrow">
+                    <!-- 左右按钮 -->
+                       <a href="" class="arrow-l"><</a> 
+                       <a href="" class="arrow-r">></a>
+                   </div>
+
+                <!-- 小圆圈 -->
+                <ol class="circle-list">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+            </div>
+       
+    
+    
+</body>
+</html>
