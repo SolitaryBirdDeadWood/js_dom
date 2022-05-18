@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        input{
+        input {
             outline: none;
         }
     </style>
 </head>
+
 <body>
-    
+
     <ol type="1">
         <li>王晨晨</li>
         <li>戴新瑞</li>
@@ -24,50 +26,50 @@
     <input type="button" value="删除">
 
     <script>
-
-        var  li =document.getElementsByTagName('li');
-        var ol=document.getElementsByTagName('ol');
-        var input =document.getElementsByTagName('input');
-          input[0].onclick=function(){
-                this.value='';
+        var li = document.getElementsByTagName('li');
+        var ol = document.getElementsByTagName('ol');
+        var input = document.getElementsByTagName('input');
+        input[0].onclick = function () {
+            this.value = '';
+        }
+        input[1].addEventListener('click', function () {
+            for (var i = 0; i <= li.length; i++) {
+                if (input[0].value <= 4 && input[0].value == i &&input[0].value>0) {
+                    console.log(parseInt(input[0].value)+1);
+                    console.log(i);
+                    ol[0].removeChild(li[parseInt(input[0].value)-1]);
+                    input[0].value=''
+                }
             }
-
-            for (var i =0;i<li.length;i++){
-                
-            }
-
-    
+        
+       
+        })
 
 
+        /*   for(var i =0;i<li.length;i++){
+                li[i].setAttribute('index',i); //修改 index 为 i
+               }
 
-
-
-
-
-
-
-
-    /*   for(var i =0;i<li.length;i++){
-            li[i].setAttribute('index',i); //修改 index 为 i
-           }
-
-            input[1].onclick=function(){
-                var is =Number(input[1].innerHTML) ;  //is 为String 类型
-             /*   console.log(is);
-                console.log(typeof(is));*/
-             /*   if(is==li[is].getAttribute('index')){
+                input[1].onclick=function(){
+                    var is =Number(input[1].innerHTML) ;  //is 为String 类型
+                 /*   console.log(is);
+                    console.log(typeof(is));*/
+        /*   if(is==li[is].getAttribute('index')){
                     ol[0].removeChild(li[is]);
                 }
 
             }*/
 
-      /*      input[0].onclick=function(){
+        /*      input[0].onclick=function(){
                 this.value='';
             }
             for(var s =0;s<li.length;s++){
          ol[0].removeChild(li[s]);
         }  //为什么删的是俩个
+
+        使用节点删除   数组 a【0】=1  a【1】=2  删除第一个后a【0】=2 长度减少   与for后面的 i++ 相对应所以长生错误
 */
     </script>
 </body>
+
 </html>

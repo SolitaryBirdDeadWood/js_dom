@@ -35,11 +35,7 @@
              padding: 0 20px;
              
         }
-        .item{
-            background-color: rgb(219, 228, 219);
-            color: rgb(206, 114, 27);
-            display: none;
-        }
+     
         .change{
             background-color: brown;
             color: wheat;
@@ -51,6 +47,11 @@
         .tab_list .current {
             background-color: #c81623;
             color: #fff;
+        }
+        .item{
+            background-color: rgb(219, 228, 219);
+            color: rgb(206, 114, 27);
+            display: none;
         }
 
     </style>
@@ -70,11 +71,11 @@
         </div>
         <div class="tab_con">
  
-            <div class="item" style="display: block;">女</div>
-            <div class="item">王晨晨</div>
-            <div class="item">减肥减肥</div>
-            <div class="item">和舍友撕逼</div>
-            <div class="item">妄想瘦10斤 成为富婆 天天换小鲜肉</div>
+            <div class="item" style="display: block;">4</div>
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">3</div>
         </div>
     </div> 
 
@@ -82,19 +83,17 @@
         var item =document.getElementsByClassName('item');
         var  lis = document.getElementsByTagName('li');
         for(let t =0;t<lis.length;t++){
- /*添加索引号*/lis[t].setAttribute('index',t);
+            lis[t].setAttribute('index',t);
               lis[t].onclick=function(){
-
- /*排他思想 先对li格式清空*/
+                //先清楚所有的classname   然后指定添加classname
                 for(var i=0;i<lis.length;i++){
                     lis[i].className='';
                 }
- /*然后添加li的点击样式*/
                 lis[t].className='change';
 
-                //   console.log(index);
+                //先都隐藏 然后 指定显示
                 for(var i =0; i<item.length;i++){
-                    /*对内容进行隐藏*/   item[i].style.display='none';
+    /*对内容进行隐藏*/   item[i].style.display='none';
                 }
      /* 获取索引 */   var index =this.getAttribute('index');
 /*通过点击的索引使显现*/item[index].style.display='block';
