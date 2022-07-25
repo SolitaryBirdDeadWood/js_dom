@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+            width: 100px;
+            height: 150px;
+            background-color: azure;
+            line-height: 30px;
+            position:absolute;
+            display: none;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <ul>
+        <li>点我拍照</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        var uls=document.querySelector('ul')
+        //打开上下文菜单
+       document.oncontextmenu=function(e){
+        uls.style.display='block'
+        uls.style.left=e.clientX+'px'
+        uls.style.right=e.clientY+'px'
+        //原来的菜单不返回
+        return false
+       } 
+       document.addEventListener('click',function(){
+           uls.style.display='none'
+       })
+    </script>
+    
+</body>
+</html>

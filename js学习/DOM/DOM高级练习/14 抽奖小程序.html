@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{padding: 0;margin: 0;list-style: none;}
+			ul{
+				width: 500px;
+				height: 500px;
+				margin: 0 auto; /* 水平居中 */
+			}
+			li{
+				width: 150px;
+				height: 150px;
+				background-color: skyblue;
+				float: left;
+				text-align: center;/* 文字水平居中 */
+				margin: 5px;   /* li之间有空白间距 */
+				line-height: 150px; /* 文字垂直居中 */
+			}
+			button{
+				width: 50px;
+				height: 30px;
+			}
+			.light{
+				background-color:red;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>100元优惠券</li>
+			<li>200元优惠券</li>
+			<li>300元优惠券</li>
+			<li>400元优惠券</li>
+			<li><button>开始</button>
+			<button>停止</button></li>
+			<li>500元优惠券</li>
+			<li>600元优惠券</li>
+			<li>700元优惠券</li>
+			<li>800元优惠券</li>
+		</ul>
+		<script>
+			//1.获取两个按钮
+			var btns = document.querySelectorAll('button');
+			//2.设置旋转顺序
+			var arr = [0,1,2,5,8,7,6,3];//下标
+			//3.获取li元素对象集合
+			var lis = document.querySelectorAll('li');
+			//4.鼠标单击事件
+			var num = 0;
+			btns[0].onclick = function(){
+				btns[0].disabled = true; //开始按钮不可用
+				time = setInterval(function(){    //设置一个计时器
+					lis[arr[num]].className = "";
+					num++;
+					if(num>7){
+						num = 0;
+					}
+					lis[arr[num]].className = "light";
+				},500);
+			}
+		 btns[1].onclick =  function(){
+			 btns[0].disabled = false; //开始按钮可用
+			 clearInterval(time);  //关掉计时器
+		 }
+		</script>
+	</body>
+</html>

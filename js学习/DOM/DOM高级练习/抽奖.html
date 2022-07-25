@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+ 
+        .big {
+            width: 318px;
+            height: 318px;
+            margin: 100px auto;
+        }
+ 
+        .big>div {
+            width: 100px;
+            height: 100px;
+            background: #48D1CC;
+            float: left;
+            line-height: 100px;
+            text-align: center;
+            border: solid;
+        }
+ 
+        .big>div:nth-of-type(5) {
+            background: #008B8B;
+            cursor: pointer;
+        }
+ 
+        .act {
+            background: #cd2121;
+        }
+  
+    </style>
+</head>
+<body>
+    <div class="big">
+        <div class="small ">开始0</div>
+        <div class="small">电脑1</div>
+        <div class="small">平板2</div>
+        <div class="small">500元红包3</div>
+        <div id="cj">
+        <button class="start">开始</button>    
+        <button class="stop">结束</button>    
+        </div>
+        <div class="small">66红包4</div>
+        <div class="small">桃子一个5</div>
+        <div class="small">钥匙扣6</div>
+        <div class="small">谢谢参与7</div>
+    </div>
+    
+</body>
+<script>
+var price =document.getElementsByClassName('small');
+var start =document.getElementsByClassName('start');
+var stop=document.getElementsByClassName('stop');
+var num=0;
+var arr=[0,1,2,5,8,7,6,3];
+start[0].addEventListener('click',function(){
+         time =setInterval(function(){
+        console.log( price[arr[num]]);
+         price[arr[num]].className='';
+         num++;
+         if(num>7){
+             num=0
+         }
+         console.log( price[arr[num]]);
+         price[arr[num]].className="act"
+     },500);
+    
+})
+
+
+stop[0].addEventListener('click',function(){
+    price[0].disabled=false;
+    clearInterval(time);
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//     for(var i =1;i<price.length;i++){
+//         var time =setInterval(function(){
+//        price[i].style.backgroundColor='#cd2121'
+//     },1000)
+//     var time1 =setInterval(function(){
+//        price[i-1].style.backgroundColor=' #008B8B'
+//     },1000*1.3)
+//     // if(i=price.length-1){
+//     //     i=1
+//     // }
+// }
+    
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
+<script>
+    /*
+      var time=setInterval(turn(),50);
+        var turn =functon(){
+            
+        }
+        price[i].setAttribute('id','act');
+        price[0].style.backgroundColor='#48D1CC'
+    
+    
+    
+    */
+</script>
